@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2c5068">
+  <title>Marian &amp; Raúl · 27 · Marzo · 2027</title>
+  <meta name="description" content="¡Estás invitado a nuestra boda! Tijuana, Baja California · 27 de marzo de 2027">
+  <meta property="og:title" content="Marian &amp; Raúl · 27 · Marzo · 2027">
+  <meta property="og:description" content="¡Estás invitado a nuestra boda! Tijuana, Baja California · 27 de marzo de 2027">
+  <meta property="og:image" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+@font-face{font-family:'Le Major';src:url('LeMajor.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+
+/* ── TOKENS (paleta Marian & Raúl: azul acero + champán) ── */
+:root{
+  --bg:#fbf8f3;            /* fondo marfil */
+  --surface:#f3ede3;       /* superficie */
+  --sand:#D4C5B2;
+  --accent-soft:#b1cad3;
+  --accent:#5f94b4;        /* acento medio */
+  --accent-deep:#2c5068;   /* acento oscuro (texto sobre claro) */
+  --night:#18303f;         /* fondo oscuro (contador) */
+  --ink-text:#1f2f3a;
+  --ink-soft:#3e5361;
+  --gold:#c9ab72;          /* champán metálico */
+  --gold-soft:#F7E7CE;
+  --gold-deep:#8a6d3b;
+  --hair:rgba(138,109,59,.35);
+  /* foil sobre claro: el pico llega al dorado base, nunca a blanco */
+  --foil:linear-gradient(100deg,#6e532a 0%,#8f7140 26%,#a8874f 50%,#8f7140 74%,#6e532a 100%);
+  /* foil sobre oscuro: el pico puede llegar a casi blanco */
+  --foil-dark:linear-gradient(100deg,#c9ab72 0%,#e6d3a8 26%,#FFFBEA 50%,#e6d3a8 74%,#c9ab72 100%);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+  --smooth:cubic-bezier(.25,.46,.45,.94);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{
+  background:var(--bg);color:var(--ink-text);
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  overflow-x:clip;max-width:480px;margin:0 auto;
+  -webkit-tap-highlight-color:transparent;
+  font-size:18px;line-height:1.6;
+  font-variant-numeric:lining-nums;
+}
+.wrap > section,#footer{position:relative;isolation:isolate;padding:72px 22px}
+img{max-width:100%}
+
+/* ── TEXTO METÁLICO (foil + barrido suave) ─────────────── */
+.foil-text{
+  background:var(--foil);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:var(--gold-deep);
+  animation:goldSweep 7s ease-in-out infinite;
+  /* evita que se corten los trazos script que salen de la caja */
+  padding:.22em .45em;margin-left:-.45em;margin-right:-.45em;margin-top:-.22em;margin-bottom:-.22em;
+  line-height:1.25;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.foil-dark{background-image:var(--foil-dark)}
+@keyframes goldSweep{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+.d1{animation-delay:-1.2s}.d2{animation-delay:-2.6s}.d3{animation-delay:-3.9s}.d4{animation-delay:-5.1s}.d5{animation-delay:-6.2s}
+
+/* ── LEVITAR ───────────────────────────────────────────── */
+@keyframes levitate{0%,100%{transform:translate3d(0,0,0) rotate(-.6deg)}50%{transform:translate3d(0,-9px,0) rotate(.6deg)}}
+.levitate{animation:levitate 6.5s ease-in-out infinite}
+.lev-b{animation-delay:-2.2s}.lev-c{animation-delay:-4.1s}
+
+/* ── HELPERS ───────────────────────────────────────────── */
+.lbl{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent-deep);text-align:center;display:block}
+.ttl{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,9vw,42px);font-weight:700;text-align:center;line-height:1.25;margin-top:8px;display:block}
+.ttl .w{display:inline-block}
+.gline{width:70px;height:1px;background:linear-gradient(to right,transparent,var(--gold-deep),transparent);margin:18px auto;position:relative;overflow:hidden}
+.gline::after{content:'';position:absolute;top:0;left:0;width:60px;height:100%;background:linear-gradient(90deg,transparent,#fff7e3,transparent);animation:glineSweep 5s ease-in-out infinite;transform:translateX(-80px)}
+@keyframes glineSweep{0%{transform:translateX(-80px);opacity:0}20%{opacity:1}100%{transform:translateX(150px);opacity:0}}
+.sub{text-align:center;font-size:19px;color:var(--ink-text);line-height:1.6;margin:6px auto 26px;max-width:340px;font-weight:500}
+.on-ink{text-shadow:0 0 18px rgba(251,248,243,.95),0 0 6px rgba(251,248,243,.9)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:48px;padding:14px 26px;border-radius:40px;
+  border:1px solid var(--accent-deep);background:var(--accent-deep);color:#fff;
+  font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;-webkit-appearance:none;touch-action:manipulation;
+  box-shadow:0 6px 22px rgba(44,80,104,.25);transition:transform .25s var(--spring),background .3s;
+}
+.btn:active{transform:scale(.96)}
+.btn-ghost{background:transparent;color:var(--accent-deep)}
+
+/* ── LOADER (SOBRE) ────────────────────────────────────── */
+#loader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity .8s ease}
+.sobre-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:sobreFadeIn 1s ease .3s forwards}
+@keyframes sobreFadeIn{to{opacity:1}}
+.sobre-btn{position:absolute;bottom:12%;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:14px;background:none;border:none;cursor:pointer;opacity:0;animation:sobreFadeIn 1s ease .8s forwards;touch-action:manipulation}
+.sobre-ring{position:relative;width:82px;height:82px;display:flex;align-items:center;justify-content:center}
+.sobre-ring::before,.sobre-ring::after{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.4);animation:ringExpand 2.8s ease-out infinite}
+.sobre-ring::after{animation-delay:1.4s}
+@keyframes ringExpand{0%{transform:scale(.65);opacity:.85}100%{transform:scale(1.65);opacity:0}}
+.sobre-circle{width:68px;height:68px;border-radius:50%;background:rgba(44,80,104,.35);border:1px solid rgba(247,231,206,.6);box-shadow:0 8px 32px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;position:relative;z-index:2;transition:transform .35s var(--spring)}
+.sobre-btn:active .sobre-circle{transform:scale(.9)}
+.sobre-circle svg{width:30px;height:30px}
+.sobre-lbl{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.7),0 0 24px rgba(0,0,0,.4)}
+.sobre-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:2;transition:opacity .5s ease}
+
+/* ── PROGRESO ──────────────────────────────────────────── */
+#prog{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;z-index:1000;background:linear-gradient(to right,var(--accent),var(--gold));pointer-events:none}
+
+/* ── BOTONES FLOTANTES (menú + música) ─────────────────── */
+.fab{
+  position:fixed;z-index:950;width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  background:rgba(243,237,227,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--gold);box-shadow:0 6px 18px rgba(24,48,63,.16);
+  color:var(--accent-deep);touch-action:manipulation;
+  opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .7s ease,transform .7s ease;
+}
+.fab.is-ready{opacity:1;pointer-events:auto;transform:none}
+.fab-menu{top:max(14px,env(safe-area-inset-top));right:14px}
+.fab-menu svg{width:20px;height:20px}
+.fab-music{bottom:max(16px,env(safe-area-inset-bottom));left:14px;width:40px;height:40px;opacity:0}
+.fab-music.is-ready{opacity:.85}
+.fab-music svg{width:16px;height:16px}
+.fab-music .ic-pause{display:none}
+.fab-music.is-playing .ic-pause{display:block}
+.fab-music.is-playing .ic-play{display:none}
+.fab-music.is-playing::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gold);animation:musPulse 2.4s ease-out infinite}
+@keyframes musPulse{0%{transform:scale(.92);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+
+#menu{
+  position:fixed;inset:0;z-index:990;background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transition:opacity .55s ease,visibility 0s linear .55s;
+}
+#menu.open{opacity:1;visibility:visible;transition:opacity .55s ease}
+.menu-close{position:absolute;top:max(14px,env(safe-area-inset-top));right:14px;width:44px;height:44px;border:none;background:none;cursor:pointer;color:var(--accent-deep);display:flex;align-items:center;justify-content:center;touch-action:manipulation}
+.menu-close svg{width:24px;height:24px}
+.menu-filete{width:90px;height:1px;background:linear-gradient(to right,transparent,var(--gold-deep),transparent);margin:0 auto 26px}
+.menu-list{list-style:none;text-align:center}
+.menu-list li{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+#menu.open .menu-list li{opacity:1;transform:none}
+.menu-list a{display:block;padding:9px 20px;min-height:44px;font-family:'Cormorant Garamond',serif;font-size:clamp(26px,7.5vw,32px);font-weight:600;color:var(--accent-deep);text-decoration:none;line-height:1.3;touch-action:manipulation}
+.menu-list a.cur{font-style:italic;color:var(--gold-deep)}
+.menu-foot{margin-top:26px;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ── FONDOS DE TINTA ───────────────────────────────────── */
+.ink-bg{position:absolute;inset:0;z-index:-2;pointer-events:none;overflow:hidden;
+  -webkit-mask-image:linear-gradient(transparent 0,#000 150px,#000 calc(100% - 150px),transparent);
+          mask-image:linear-gradient(transparent 0,#000 150px,#000 calc(100% - 150px),transparent)}
+.ink-bg i{position:absolute;inset:-6%;background:center/cover no-repeat;transform-origin:50% 50%;
+  animation:inkDrift 28s ease-in-out infinite alternate}
+@keyframes inkDrift{
+  0%  {transform:translate(-2.5%,-1.5%) scale(1)    rotate(-.6deg)}
+  50% {transform:translate(1%,2.5%)     scale(1.06) rotate(.2deg)}
+  100%{transform:translate(2.5%,-1%)    scale(1.1)  rotate(.6deg)}
+}
+.ink-bg.flip{transform:scaleX(-1)}
+.ink-hero   i{background-image:url(ink/ink-hero.webp)}
+.ink-top    i{background-image:url(ink/ink-top.webp);background-position:center top}
+.ink-corner i{background-image:url(ink/ink-corner.webp)}
+.ink-footer i{background-image:url(ink/ink-footer.webp);background-position:center bottom}
+.ink-oval   i{background-image:url(ink/ink-oval.webp);background-size:contain;background-position:center;inset:2% 4%}
+@media (prefers-reduced-motion:reduce){.ink-bg i{animation:none}}
+
+/* ── 1. HERO ───────────────────────────────────────────── */
+#hero{min-height:100svh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:0 24px;background:var(--night)}
+.hero-bg{position:absolute;inset:-12% 0;z-index:0}
+.hero-drift{position:absolute;inset:0;background:url('fotos-cliente/foto-3.jpg') center 28%/cover no-repeat;animation:heroDrift 26s ease-in-out infinite alternate}
+@keyframes heroDrift{0%{transform:translate3d(0,0,0) scale(1.02)}100%{transform:translate3d(-2%,-1.6%,0) scale(1.10)}}
+.hero-sheen{position:absolute;inset:0;z-index:1;overflow:hidden;mix-blend-mode:soft-light;pointer-events:none}
+.hero-sheen i{position:absolute;top:-10%;bottom:-10%;left:0;width:70%;background:linear-gradient(115deg,transparent 0%,rgba(255,246,224,.75) 50%,transparent 100%);transform:translateX(-110%);animation:heroSheen 9s ease-in-out infinite}
+@keyframes heroSheen{0%{transform:translateX(-110%)}60%,100%{transform:translateX(160%)}}
+.hero-veil{position:absolute;left:0;right:0;bottom:0;height:55%;z-index:2;pointer-events:none;background:linear-gradient(to top,rgba(16,30,40,.9) 0%,rgba(16,30,40,.72) 40%,rgba(16,30,40,.3) 75%,transparent 100%)}
+.hero-cnt{position:relative;z-index:4;text-align:center;padding-bottom:110px;display:flex;flex-direction:column;align-items:center}
+.hero-eyebrow{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#f3ede3;margin-bottom:6px}
+.hero-names{font-family:'Le Major','Bodoni Moda',serif;font-weight:400;font-size:clamp(56px,17vw,92px);line-height:1;display:flex;flex-direction:column;align-items:center}
+.hero-names .amp{font-family:'Great Vibes',cursive;font-size:.62em;margin:.04em 0}
+.hero-meta{margin-top:14px;font-family:'Lato',sans-serif;font-size:14px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.hero-meta span{display:block;font-size:13px;letter-spacing:3px;font-weight:400;opacity:.92;margin-top:4px}
+.h-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:4}
+.h-scroll span{font-family:'Lato',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:700}
+.h-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.7),transparent);transform-origin:top;animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);opacity:1}80%{transform:scaleY(1);opacity:.8}100%{transform:scaleY(1);opacity:0}}
+
+/* ── 2. INVITACIÓN ─────────────────────────────────────── */
+#fecha{background:var(--bg);text-align:center;padding:96px 26px}
+.fch-headline{font-family:'Great Vibes',cursive;font-size:clamp(48px,13vw,62px);line-height:1.2;display:inline-block}
+.fch-n1{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,7vw,34px);font-weight:700;color:var(--ink-text);letter-spacing:6px;text-transform:uppercase;line-height:1.2;margin-top:10px}
+.fch-amp{font-family:'Great Vibes',cursive;font-size:clamp(44px,12vw,58px);display:inline-block;line-height:1.1}
+.fch-honor{margin:26px auto 0;max-width:330px;font-size:19px;font-style:italic;font-weight:500;color:var(--ink-text);line-height:1.6}
+.fch-date{margin-top:22px;font-family:'Lato',sans-serif;font-size:20px;font-weight:700;letter-spacing:6px;color:var(--accent-deep)}
+
+/* ── 3. CONTADOR ───────────────────────────────────────── */
+#countdown{background:linear-gradient(170deg,#24445a 0%,#1d3a4d 45%,#18303f 100%);text-align:center;color:#fff}
+#countdown .lbl{color:var(--gold-soft)}
+.cd-row{display:flex;justify-content:center;align-items:flex-start;margin-top:22px}
+.cd-cell{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
+.cd-num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(42px,11vw,60px);line-height:1;color:#f7efe0;font-variant-numeric:tabular-nums lining-nums;display:block;perspective:400px}
+.cd-num b{display:inline-block;font-weight:600;transform-origin:50% 60%}
+.cd-glow{position:absolute;top:-6px;left:50%;width:70px;height:70px;margin-left:-35px;border-radius:50%;background:radial-gradient(circle,rgba(247,231,206,.35),transparent 65%);opacity:0;pointer-events:none}
+.cd-lbl{font-family:'Lato',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-soft);margin-top:10px}
+.cd-sep{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,8vw,46px);color:rgba(247,231,206,.45);line-height:1;padding:0 2px}
+.cd-sub{margin-top:24px;font-size:19px;font-style:italic;color:#f3ede3}
+
+/* ── 4. UBICACIONES ────────────────────────────────────── */
+#location{background:var(--surface);text-align:center}
+.loc-list{display:flex;flex-direction:column;gap:26px;max-width:360px;margin:0 auto}
+.loc-float{will-change:auto}
+.loc-card{
+  background:rgba(251,248,243,.9);border:1px solid var(--hair);border-radius:22px;
+  padding:30px 22px 28px;box-shadow:0 10px 30px rgba(24,48,63,.10);
+  transition:transform .55s var(--spring),box-shadow .55s ease;transform:perspective(800px);
+  cursor:pointer;touch-action:manipulation;
+}
+.loc-card.lift{transform:perspective(800px) translateY(-12px) rotateX(4deg) rotateY(-3deg);box-shadow:0 30px 60px rgba(24,48,63,.22)}
+.loc-pin{width:54px;height:54px;margin:0 auto 10px;color:var(--accent-deep);position:relative}
+.loc-pin svg{width:54px;height:54px;animation:pinBeat 2.6s ease-in-out infinite;transform-origin:50% 90%}
+.loc-pin::after{content:'';position:absolute;left:50%;bottom:2px;width:26px;height:8px;margin-left:-13px;border-radius:50%;background:rgba(95,148,180,.35);animation:pinShadow 2.6s ease-in-out infinite}
+@keyframes pinBeat{0%,100%{transform:scale(1)}12%{transform:scale(1.14)}24%{transform:scale(.97)}36%{transform:scale(1.07)}}
+@keyframes pinShadow{0%,100%{transform:scale(1);opacity:.6}12%{transform:scale(1.4);opacity:.25}}
+.loc-eyebrow{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--accent-deep);display:block}
+.loc-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;line-height:1.25;display:inline-block;margin-top:4px}
+.loc-time{font-family:'Lato',sans-serif;font-size:20px;font-weight:700;color:var(--ink-text);margin:6px 0 4px}
+.loc-venue{font-family:'Lato',sans-serif;font-size:16px;font-weight:400;color:var(--ink-soft);line-height:1.5;margin-bottom:18px}
+.loc-note{font-family:'Lato',sans-serif;font-size:15px;color:var(--ink-soft);margin-top:-6px}
+
+/* ── 5. CALENDARIO ─────────────────────────────────────── */
+#calendar{background:var(--bg);text-align:center}
+
+/* ── 6. ITINERARIO ─────────────────────────────────────── */
+#itinerary{background:var(--bg);text-align:center}
+.it-timeline{position:relative;max-width:360px;margin:34px auto 0;padding:10px 0}
+.it-line{position:absolute;left:50%;top:0;bottom:0;width:1px;margin-left:-.5px;background:linear-gradient(to bottom,transparent,var(--gold-deep) 8%,var(--gold-deep) 92%,transparent);transform-origin:top}
+.it-step{display:grid;grid-template-columns:1fr 44px 1fr;align-items:center;min-height:150px;position:relative}
+.it-dot{width:12px;height:12px;border-radius:50%;background:var(--accent-deep);margin:0 auto;box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--gold);position:relative;z-index:1}
+.it-side{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 6px}
+.it-ico{width:66px;height:66px;border-radius:50%;background:var(--surface);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;color:var(--accent-deep)}
+.it-ico svg{width:38px;height:38px}
+.it-time{font-family:'Lato',sans-serif;font-size:19px;font-weight:700;color:var(--ink-text);line-height:1.2}
+.it-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--accent-deep);line-height:1.2}
+.it-place{font-family:'Lato',sans-serif;font-size:15px;color:var(--ink-soft);line-height:1.4}
+
+/* ── ÁLBUM ─────────────────────────────────────────────── */
+#album{background:var(--bg);text-align:center}
+.album-qr{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:16px;padding:18px;background:#fff;border:1px solid var(--hair);border-radius:18px;box-shadow:0 12px 34px rgba(24,48,63,.12)}
+.album-qr img{width:210px;height:210px;display:block;border-radius:6px}
+.album-qr.bloqueado img{filter:blur(7px);opacity:.75}
+.album-qr.bloqueado .btn{pointer-events:none;opacity:.5}
+.album-aviso{margin:20px auto 0;max-width:320px;font-family:'Lato',sans-serif;font-size:16px;color:var(--ink-soft);line-height:1.55}
+.album-qr:not(.bloqueado) ~ .album-aviso{display:none}
+
+/* ── FAMILIA ───────────────────────────────────────────── */
+#family{background:var(--surface);text-align:center}
+.fam-grid{display:flex;flex-direction:column;gap:20px;max-width:340px;margin:0 auto}
+.fam-card{background:rgba(251,248,243,.88);border:1px solid var(--hair);border-radius:18px;padding:24px 20px;box-shadow:0 8px 26px rgba(24,48,63,.08)}
+.fam-role{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--accent-deep);display:block;margin-bottom:10px}
+.fam-name{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink-text);line-height:1.4}
+.fam-amp{display:block;font-family:'Great Vibes',cursive;font-size:28px;color:var(--gold-deep);line-height:1.1}
+.fam-pend{font-style:italic;color:var(--ink-soft)}
+
+/* ── FOOTER ────────────────────────────────────────────── */
+#footer{background:var(--bg);text-align:center;padding:96px 26px 64px}
+.ft-msg{font-size:22px;font-style:italic;font-weight:600;color:var(--ink-text);line-height:1.5}
+.ft-nofaltes{font-family:'Great Vibes',cursive;font-size:clamp(50px,14vw,66px);line-height:1.2;display:inline-block;margin:6px 0}
+.ft-names{font-family:'Le Major','Bodoni Moda',serif;font-size:clamp(38px,11vw,52px);line-height:1.2;display:inline-block}
+.ft-date{font-family:'Lato',sans-serif;font-size:15px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent-deep);margin:14px 0 34px}
+.el-sep{width:44px;height:1px;background:var(--hair);margin:0 auto 16px}
+.el-credit{display:inline-flex;align-items:center;gap:8px;color:var(--accent-deep);font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;letter-spacing:1.5px;text-decoration:none;min-height:44px}
+
+/* ── MEDALLAS / ESQUINAS / AURAS (de la plantilla) ─────── */
+.sec-medal{position:relative;width:52px;height:52px;margin:0 auto 16px}
+.sec-medal::before{content:'';position:absolute;inset:-9px;border:1px dashed rgba(138,109,59,.4);border-radius:50%;animation:secMedalRotate 36s linear infinite}
+.sec-medal::after{content:'';position:absolute;inset:0;border:1px solid rgba(138,109,59,.45);border-radius:50%;animation:secMedalBreathe 5s ease-in-out infinite}
+.sec-medal span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--gold-deep);font-size:16px}
+@keyframes secMedalRotate{to{transform:rotate(360deg)}}
+@keyframes secMedalBreathe{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.08);opacity:1}}
+.corner{position:absolute;width:16px;height:16px;border-style:solid;border-color:transparent;border-width:0;pointer-events:none;transition:border-color 1.4s ease}
+.corner.tl{top:12px;left:12px;border-top-width:1px;border-left-width:1px}
+.corner.tr{top:12px;right:12px;border-top-width:1px;border-right-width:1px}
+.corner.bl{bottom:12px;left:12px;border-bottom-width:1px;border-left-width:1px}
+.corner.br{bottom:12px;right:12px;border-bottom-width:1px;border-right-width:1px}
+.corner.on{border-color:rgba(138,109,59,.45)}
+
+/* ── SHEEN (mesa de regalos) ───────────────────────────── */
+.gift-card{position:relative;overflow:hidden}
+.gift-card .sheen{position:absolute;top:0;bottom:0;left:0;width:55%;pointer-events:none;background:linear-gradient(105deg,transparent,rgba(255,250,236,.85),transparent);transform:translateX(-140%) skewX(-12deg)}
+
+/* ── CÓDIGO DE VESTIMENTA (dc2-) ─────────────────────────── */
+#dresscode.dc2{position:relative;background:transparent;text-align:center;padding:88px 20px 92px}
+.dc2-inner{position:relative;z-index:1;max-width:460px;margin:0 auto}
+
+.dc2-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,9vw,46px);line-height:1.15;margin:0 0 6px}
+.dc2-type{font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 34px}
+
+/* Dibujos: 2 columnas, sin tarjetas, levitan con leve balanceo */
+.dc2-figures{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;max-width:380px;margin:0 auto 26px}
+.dc2-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.dc2-img{display:block;height:clamp(190px,56vw,236px);width:auto;max-width:100%;
+  filter:drop-shadow(0 8px 14px rgba(31,47,58,.18));
+  transform-origin:50% 100%;animation:dc2Sway 6.5s ease-in-out infinite}
+.dc2-img--b{animation-delay:-3.25s}
+@keyframes dc2Sway{
+  0%,100%{transform:translateY(0) rotate(-1.4deg)}
+  50%{transform:translateY(-9px) rotate(1.4deg)}
+}
+.dc2-fig-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:21px;letter-spacing:.02em;color:var(--accent-deep)}
+
+.dc2-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:20px;line-height:1.5;color:var(--ink-text);margin:0 auto 34px;max-width:320px}
+
+/* Paletas */
+.dc2-palettes{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:380px;margin:0 auto}
+.dc2-group{display:flex;flex-direction:column;align-items:center}
+.dc2-group-label{font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 16px}
+.dc2-cycle{display:flex;flex-direction:column;align-items:center;gap:14px}
+
+.dc2-orb-wrap{position:relative;width:74px;height:74px}
+/* Glow dorado pulsante (solo opacity/transform) */
+.dc2-orb-wrap::before{content:'';position:absolute;inset:-4px;border-radius:50%;
+  box-shadow:0 0 22px 6px var(--gold);opacity:.45;
+  animation:dc2Glow 3.4s ease-in-out infinite;pointer-events:none}
+@keyframes dc2Glow{
+  0%,100%{opacity:.32;transform:scale(.96)}
+  50%{opacity:.85;transform:scale(1.06)}
+}
+.dc2-orb{position:absolute;inset:0;border-radius:50%;overflow:hidden;isolation:isolate;
+  -webkit-mask-image:-webkit-radial-gradient(white,black);
+  background:var(--surface);
+  box-shadow:0 0 0 1px rgba(31,47,58,.2),0 8px 18px rgba(31,47,58,.16)}
+/* Capas apiladas: un span por color, solo cambia su opacity */
+.dc2-layer{position:absolute;inset:0;border-radius:50%;background:var(--c);opacity:0;
+  transition:opacity 1.2s ease-in-out}
+.dc2-layer.is-on{opacity:1}
+.dc2-layer--light{box-shadow:inset 0 0 0 1.5px rgba(31,47,58,.28)}
+.dc2-gloss{position:absolute;inset:0;border-radius:50%;z-index:1000;pointer-events:none;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.55) 0,rgba(255,255,255,.12) 32%,rgba(255,255,255,0) 55%),
+             radial-gradient(circle at 70% 80%,rgba(0,0,0,.12) 0,rgba(0,0,0,0) 55%)}
+/* Barrido de luz diagonal */
+.dc2-sweep{position:absolute;top:-30%;left:0;width:38%;height:160%;z-index:1001;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.7),rgba(255,255,255,0));
+  transform:translateX(-140%) rotate(24deg);animation:dc2Sweep 4.6s ease-in-out infinite}
+@keyframes dc2Sweep{
+  0%{transform:translateX(-140%) rotate(24deg)}
+  55%,100%{transform:translateX(320%) rotate(24deg)}
+}
+
+.dc2-names{display:grid;min-width:150px}
+.dc2-name{grid-area:1/1;font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.05em;color:var(--ink-text);
+  opacity:0;transition:opacity 1.2s ease-in-out}
+.dc2-name.is-on{opacity:1}
+
+/* Lista accesible (lectores de pantalla); visible solo con movimiento reducido */
+.dc2-list{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;
+  margin:0;padding:0;list-style:none}
+.dc2-dot{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--c);flex:0 0 auto;
+  box-shadow:0 0 0 1px rgba(31,47,58,.2),0 0 10px rgba(201,171,114,.45)}
+.dc2-dot--light{box-shadow:inset 0 0 0 1.5px rgba(31,47,58,.3),0 0 10px rgba(201,171,114,.45)}
+
+/* Aviso solo adultos */
+.dc2-adults{margin:46px auto 0;max-width:360px;padding:24px 22px 22px;border-radius:18px;
+  background:rgba(243,237,227,.72);border:1px solid rgba(201,171,114,.55);
+  box-shadow:0 10px 26px rgba(31,47,58,.07)}
+.dc2-adults-ico{width:22px;height:21px;fill:var(--gold);display:block;margin:0 auto 10px}
+.dc2-adults-title{font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 8px}
+.dc2-adults-text{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;line-height:1.55;color:var(--ink-text);margin:0}
+
+@media (max-width:360px){
+  .dc2-palettes{gap:12px}
+  .dc2-names{min-width:120px}
+}
+
+/* Movimiento reducido: todo quieto, colores en fila como bolitas pequeñas */
+@media (prefers-reduced-motion:reduce){
+  .dc2-img,.dc2-orb-wrap::before,.dc2-sweep{animation:none!important}
+  .dc2-sweep{display:none}
+  .dc2-cycle{display:none}
+  .dc2-palettes{grid-template-columns:1fr;gap:22px}
+  .dc2-list{position:static;width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;white-space:normal;
+    display:flex;flex-wrap:wrap;justify-content:center;gap:12px 20px}
+  .dc2-list li{display:flex;align-items:center;gap:8px;font-family:'Lato',sans-serif;font-weight:700;font-size:16px;color:var(--ink-text)}
+}
+/* ── MESA DE REGALOS + LLUVIA DE SOBRES (env-) ───────────── */
+#gifts.env-gifts{position:relative;text-align:center;padding:88px 20px 96px}
+.env-gifts-inner{position:relative;max-width:460px;margin:0 auto}
+.env-gifts-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,9vw,46px);line-height:1.15;margin:0 0 14px}
+.env-gifts-intro{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;line-height:1.6;color:var(--ink-text);max-width:340px;margin:0 auto 30px}
+
+/* Tarjeta Amazon */
+.gift-card.env-amazon{position:relative;overflow:hidden;isolation:isolate;max-width:360px;margin:0 auto;
+  padding:30px 24px 28px;border-radius:20px;background:rgba(251,248,243,.86);
+  border:1px solid rgba(201,171,114,.6);
+  box-shadow:0 14px 34px rgba(31,47,58,.09),inset 0 1px 0 rgba(255,255,255,.8)}
+.env-amazon-ico{width:46px;height:46px;color:var(--gold-deep);display:block;margin:0 auto 10px}
+.env-amazon-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;line-height:1.1;color:var(--ink-text);margin:0}
+.env-amazon-sub{font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);margin:6px 0 20px}
+.env-amazon-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;border-radius:999px;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.08em;text-decoration:none;
+  color:#fff;background:var(--accent-deep);border:1px solid var(--gold);
+  box-shadow:0 8px 20px rgba(44,80,104,.25);touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  transition:transform .2s ease}
+.env-amazon-btn:hover{transform:translateY(-2px)}
+.env-amazon-btn:active{transform:translateY(0) scale(.98)}
+.env-amazon-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Zona del sobre */
+.env-zone{position:relative;margin:54px -20px 0;padding:10px 20px 20px;overflow:hidden}
+.env-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.env-rain-item{position:absolute;top:0;left:0;display:block;will-change:transform,opacity;opacity:0}
+.env-rain-item .er-paper{fill:#fbf6ec;stroke:var(--gold);stroke-width:1.2}
+.env-rain-item .er-v{fill:var(--gold-soft);stroke:var(--gold);stroke-width:1;stroke-linejoin:round}
+.env-rain-item .er-flap{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linejoin:round}
+.env-rain-item .er-seal{fill:var(--accent-deep)}
+
+.env-stage{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.env-kicker{font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 6px}
+
+.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;border:0;background:none;padding:12px;margin:14px auto 0;
+  min-width:44px;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;color:inherit;font:inherit}
+.env-interactive:focus{outline:none}
+.env-interactive:focus-visible .env-body{outline:2px solid var(--accent);outline-offset:8px;border-radius:10px}
+/* Antes de aterrizar (solo si el JS lo arma) */
+.env-interactive.env-armed{opacity:0;transform:translateY(-150px) rotate(-12deg) scale(.82)}
+
+.env-body{position:relative;display:block;perspective:700px;width:min(258px,74vw);aspect-ratio:260/200;
+  filter:drop-shadow(0 12px 24px rgba(31,47,58,.16))}
+.env-svg{width:100%;height:100%;display:block}
+.env-paper{fill:url(#envPaperGrad);stroke:var(--gold);stroke-width:1.5}
+.env-fold{fill:none;stroke:var(--gold);stroke-width:1.1;opacity:.75}
+.env-inner-line{fill:none;stroke:var(--gold);stroke-width:.6;opacity:.45}
+.env-flap-wrap{position:absolute;top:23%;left:6.9%;width:86.2%;height:43%;display:block;transform-origin:top center;
+  transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2}
+.env-flap-wrap svg{width:100%;height:100%;display:block}
+.env-flap{fill:url(#envFlapGrad);stroke:var(--gold);stroke-width:1.6;stroke-linejoin:round}
+.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg)}
+
+.env-seal{position:absolute;top:52%;left:50%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;
+  transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1);pointer-events:none;
+  filter:drop-shadow(0 3px 5px rgba(31,47,58,.3))}
+.env-seal-base{fill:var(--accent-deep)}
+.env-seal-edge{fill:none;stroke:#1a3346;stroke-width:2;opacity:.6}
+.env-seal-ring{fill:none;stroke:var(--gold-soft);stroke-width:1.1;opacity:.9}
+.env-seal-txt{font-family:'Great Vibes',cursive;font-size:22px;fill:var(--gold-soft)}
+.env-interactive.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+
+/* Respiración tras aterrizar */
+.env-body.landed{animation:envBreathe 3.6s ease-in-out infinite}
+@keyframes envBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.env-interactive.open .env-body{animation:none}
+
+/* "Toca para abrir / cerrar" (también es botón) */
+.env-tap-hint{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:14px auto 0;padding:10px 24px;
+  border-radius:999px;border:1px solid rgba(201,171,114,.65);background:rgba(251,248,243,.78);cursor:pointer;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:opacity .5s ease}
+.env-tap-hint:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.env-tap-hint.env-wait{opacity:0}
+.env-tap-hint.show{animation:envHintPulse 2.4s ease-in-out infinite}
+.env-interactive.open ~ .env-tap-hint{animation:none}
+@keyframes envHintPulse{0%,100%{opacity:.72}50%{opacity:1}}
+
+/* Contenido al abrir (aparece con opacity/transform; el hueco se crea al instante) */
+.env-open-content{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:320px;margin:18px auto 0;padding:0 8px;text-align:center;
+  opacity:0;transform:translateY(12px);transition:opacity .45s ease .25s,transform .55s cubic-bezier(.2,.7,.2,1) .25s}
+.env-open-content[hidden]{display:none!important}
+.env-open-content.on{opacity:1;transform:none}
+.env-mailbox-icon{width:42px;height:42px;color:var(--gold-deep)}
+.env-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(25px,7vw,30px);line-height:1.25;color:var(--accent-deep);margin:0}
+.env-desc{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;line-height:1.6;color:var(--ink-text);margin:0}
+
+@media (prefers-reduced-motion:reduce){
+  .env-body.landed,.env-tap-hint.show{animation:none!important}
+  .env-flap-wrap,.env-seal,.env-open-content{transition:none!important}
+  .env-interactive.env-armed{opacity:1;transform:none}
+  .env-rain{display:none}
+}
+/* ═══════════ GALERÍA · CARRUSEL 3D (g3d-) ═══════════
+   Usa variables de :root: --bg --surface --sand --accent --accent-soft --accent-deep --ink-text --gold --gold-soft --gold-deep
+   Fondo de la sección = --bg sólido: el velo del reflejo usa ese mismo color. */
+.g3d-section{
+  --g3d-w:clamp(150px,44vw,210px);
+  --g3d-h:calc(var(--g3d-w) * 1.4);
+  position:relative;
+  padding:84px 16px 72px;
+  background:var(--bg);
+  text-align:center;
+  overflow-x:clip;
+}
+.g3d-section [hidden]{display:none!important}
+
+.g3d-eyebrow{
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold-deep);margin:0 0 10px;
+}
+.g3d-title{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(42px,11vw,64px);line-height:1.05;margin:0;
+}
+.g3d-orn{
+  display:block;width:120px;height:1px;margin:18px auto 0;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+/* Escena: alto = tarjeta + reflejo. El centro de perspectiva cae en el centro de la tarjeta. */
+.g3d-scene{
+  position:relative;width:100%;max-width:760px;
+  height:calc(var(--g3d-h) * 1.72);
+  margin:34px auto 0;
+  perspective:1400px;
+  perspective-origin:50% 35%;
+  touch-action:pan-y;           /* scroll vertical libre; el arrastre horizontal gira */
+  -webkit-user-select:none;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.g3d-ring{
+  position:absolute;inset:0;
+  transform-style:preserve-3d;
+  cursor:grab;
+}
+.g3d-ring.is-drag{cursor:grabbing}
+
+.g3d-card{
+  position:absolute;left:50%;
+  top:calc(var(--g3d-h) * .1);
+  width:var(--g3d-w);height:var(--g3d-h);
+  margin-left:calc(var(--g3d-w) * -.5);
+  transform-style:flat;
+  outline:none;
+}
+.g3d-frame{
+  position:relative;width:100%;height:100%;
+  border-radius:16px;overflow:hidden;
+  background:var(--surface);
+  border:1.5px solid var(--gold);
+  box-shadow:0 14px 34px rgba(44,80,104,.20),0 0 0 4px rgba(247,231,206,.55);
+}
+.g3d-frame img,
+.g3d-refl img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;
+  pointer-events:none;
+  -webkit-user-drag:none;
+}
+.g3d-card:focus-visible .g3d-frame{box-shadow:0 0 0 3px var(--accent-deep),0 14px 34px rgba(44,80,104,.22)}
+
+/* Reflejo: div volteado (scaleY(-1)) + velo del color de fondo. Nada de -webkit-box-reflect. */
+.g3d-refl{
+  position:absolute;left:0;right:0;
+  top:calc(100% + 8px);
+  height:42%;
+  overflow:hidden;
+  border-radius:16px 16px 0 0;
+  pointer-events:none;
+}
+.g3d-refl-flip{
+  position:absolute;left:0;top:0;width:100%;
+  height:calc(100% / .42);      /* = alto de la tarjeta */
+  transform:scaleY(-1);         /* la parte baja de la foto queda pegada a la tarjeta */
+}
+.g3d-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(251,248,243,.58) 0%,rgba(251,248,243,.86) 45%,#fbf8f3 92%);
+  background:linear-gradient(180deg,
+    color-mix(in srgb,var(--bg) 58%,transparent) 0%,
+    color-mix(in srgb,var(--bg) 86%,transparent) 45%,
+    var(--bg) 92%);
+}
+
+.g3d-hint{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:19px;letter-spacing:.08em;
+  color:var(--accent-deep);
+  margin:6px 0 0;
+}
+
+/* ── Lightbox (se mueve a <body>) ── */
+.g3d-lb[hidden]{display:none!important}
+.g3d-lb{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  padding:56px 16px 64px;
+  background:rgba(31,47,58,.92);
+  overscroll-behavior:contain;
+  opacity:0;transition:opacity .35s ease;
+}
+.g3d-lb.is-open{opacity:1}
+.g3d-lb-fig{margin:0;max-width:min(92vw,720px);max-height:100%;display:flex}
+.g3d-lb-img{
+  max-width:100%;max-height:calc(100vh - 140px);max-height:calc(100dvh - 140px);
+  object-fit:contain;border-radius:12px;
+  border:1.5px solid var(--gold);
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
+  transform:scale(.94);transition:transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.g3d-lb.is-open .g3d-lb-img{transform:scale(1)}
+.g3d-lb-close,.g3d-lb-nav{
+  position:absolute;display:flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:50%;
+  border:1.5px solid var(--gold-soft);
+  background:rgba(31,47,58,.55);color:#fbf8f3;
+  font-family:'Cormorant Garamond',serif;font-size:32px;line-height:1;
+  cursor:pointer;
+}
+.g3d-lb-close{top:14px;right:14px}
+.g3d-lb-prev{left:10px;top:50%;margin-top:-24px}
+.g3d-lb-next{right:10px;top:50%;margin-top:-24px}
+.g3d-lb-close:focus-visible,.g3d-lb-nav:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px}
+.g3d-lb-count{
+  position:absolute;bottom:18px;left:0;right:0;margin:0;
+  font-family:'Lato',sans-serif;font-weight:600;font-size:16px;letter-spacing:.2em;
+  color:#fbf8f3;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .g3d-lb,.g3d-lb-img{transition:none}
+  .g3d-lb-img{transform:none}
+}
+/* ═══════════ RSVP (rv-) · Marian & Raúl ═══════════
+   Usa variables de :root: --bg --surface --sand --accent --accent-soft --accent-deep --ink-text --gold --gold-soft --gold-deep
+   Contraste: textos en --ink-text / --accent-deep / --gold-deep (≥4.5:1 sobre --bg y --surface).
+   Bordes de campos en --accent (≈3.2:1, cumple 3:1 de componentes). */
+.rv-section{
+  position:relative;
+  padding:84px 16px 88px;
+  background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%);
+  text-align:center;
+  color:var(--ink-text);
+}
+.rv-section [hidden]{display:none!important}
+
+.rv-eyebrow{
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-deep);margin:0 0 10px;
+}
+.rv-title{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:clamp(42px,11vw,64px);line-height:1.05;margin:0;
+}
+.rv-adults{
+  display:inline-flex;align-items:center;gap:12px;
+  margin:16px auto 0;
+  font-family:'Lato',sans-serif;font-weight:600;font-size:16px;letter-spacing:.06em;
+  color:var(--accent-deep);
+}
+.rv-adults-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex:none}
+
+/* nombre del invitado: serif legible, nunca script */
+.rv-hi{
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-style:normal;
+  font-size:clamp(28px,7.5vw,36px);line-height:1.2;
+  color:var(--ink-text);margin:26px 0 0;
+}
+.rv-note{
+  font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;
+  font-size:20px;line-height:1.5;color:var(--accent-deep);margin:6px 0 0;
+}
+.rv-note:empty{display:none}
+
+.rv-pases{
+  display:inline-flex;flex-direction:column;align-items:center;
+  margin:18px auto 4px;padding:14px 34px 12px;
+  border:1.5px solid var(--gold);border-radius:16px;
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(247,231,206,.7),0 10px 26px rgba(44,80,104,.10);
+}
+.rv-pases-label{
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);
+}
+.rv-pases-num{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:56px;line-height:1;color:var(--accent-deep);
+}
+.rv-dl{
+  font-family:'Lato',sans-serif;font-weight:600;font-size:16px;
+  color:var(--ink-text);margin:14px 0 0;
+}
+
+/* ── bandeja ── */
+.rv-bandeja{max-width:420px;margin:24px auto 0}
+.rv-toggle{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rv-toggle-btn{
+  min-height:54px;padding:8px 10px;border-radius:14px;
+  border:1.5px solid var(--accent);
+  background:#fff;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;line-height:1.25;
+  color:var(--accent-deep);
+  cursor:pointer;
+  transition:background-color .25s,color .25s,border-color .25s,transform .2s;
+}
+.rv-toggle-btn:active{transform:scale(.97)}
+.rv-toggle-btn.is-on{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.rv-toggle-btn:focus-visible,
+.rv-btn:focus-visible,
+.rv-editar-btn:focus-visible{outline:2px solid var(--accent-deep);outline-offset:3px}
+.rv-toggle-btn:disabled{opacity:.55;cursor:not-allowed}
+
+.rv-fields{margin-top:16px;display:grid;gap:10px;animation:rv-in .4s ease both}
+/* inputs creados por JS llevan class="rv-input" */
+.rv-input{
+  display:block;width:100%;box-sizing:border-box;
+  min-height:54px;padding:12px 16px;border-radius:12px;
+  border:1.5px solid var(--accent);
+  background:#fff;
+  font-family:'Lato',sans-serif;font-weight:500;font-size:16px;
+  color:var(--ink-text);
+  outline:none;
+  -webkit-appearance:none;appearance:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+.rv-input::placeholder{color:#5a6670;opacity:1}
+.rv-input:focus{border-color:var(--accent-deep);box-shadow:0 0 0 3px rgba(95,148,180,.28)}
+
+.rv-btn{
+  width:100%;margin-top:18px;min-height:56px;border-radius:999px;border:none;
+  background:var(--accent-deep);color:#fbf8f3;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(44,80,104,.25),inset 0 0 0 1.5px rgba(201,171,114,.65);
+  animation:rv-breathe 3.2s ease-in-out infinite;
+}
+.rv-btn:disabled{opacity:.5;cursor:not-allowed;animation:none}
+
+/* ── gracias ── */
+.rv-gracias{
+  max-width:400px;margin:24px auto 0;padding:28px 22px;
+  background:#fff;border:1.5px solid var(--gold);border-radius:16px;
+  box-shadow:0 0 0 4px rgba(247,231,206,.7),0 14px 30px rgba(44,80,104,.10);
+  animation:rv-in .5s ease both;
+}
+.rv-gracias-icon{color:var(--accent-deep);margin:0 auto 10px;display:block}
+.rv-gracias-title{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:28px;line-height:1.3;color:var(--ink-text);margin:0 0 8px;
+}
+.rv-gracias-sub{
+  font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;
+  font-size:20px;line-height:1.55;color:var(--accent-deep);margin:0 0 18px;
+}
+.rv-editar-btn{
+  min-height:46px;padding:10px 22px;border-radius:999px;
+  border:1.5px solid var(--accent);background:transparent;
+  font-family:'Lato',sans-serif;font-weight:700;font-size:16px;
+  color:var(--accent-deep);cursor:pointer;
+  transition:background-color .25s;
+}
+.rv-editar-btn:hover{background:rgba(177,202,211,.35)}
+.rv-editar-btn:disabled{opacity:.45;cursor:not-allowed}
+
+.rv-feedback{
+  margin:14px 0 0;min-height:24px;
+  font-family:'Lato',sans-serif;font-weight:600;font-size:16px;color:var(--ink-text);
+}
+.rv-feedback.is-err{color:#9b2c1f}
+.rv-feedback.is-ok{color:var(--accent-deep)}
+
+/* confeti (se agrega a <body>) */
+.rv-confetti{
+  position:fixed;top:-14px;z-index:99999;
+  width:9px;height:14px;border-radius:2px;
+  pointer-events:none;will-change:transform,opacity;
+}
+
+@keyframes rv-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes rv-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.018)}}
+
+@media (prefers-reduced-motion:reduce){
+  .rv-fields,.rv-gracias,.rv-btn{animation:none}
+  .rv-toggle-btn{transition:none}
+}
+/* RSVP: el botón respira */
+#rv-confirm-btn{animation:rvBreathe 3.2s ease-in-out infinite}
+@keyframes rvBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion:reduce){#rv-confirm-btn{animation:none}}
+
+/* ── REDUCED MOTION ────────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  .foil-text{animation:none;background-position:50% 0}
+  .levitate,.hero-drift,.hero-sheen i,.gline::after,.loc-pin svg,.loc-pin::after,.sec-medal::before,.sec-medal::after,.h-scroll-line,.fab-music::after{animation:none!important}
+  .loc-card,.menu-list li,#menu{transition:opacity .3s ease!important}
+}
+  </style>
+</head>
+<body>
+
+<!-- LOADER (SOBRE) -->
+<div id="loader">
+  <img class="sobre-img" src="sobre.jpg" alt="Sobre de la invitación de Marian y Raúl">
+  <button class="sobre-btn" id="sobreBtn" aria-label="Abrir invitación">
+    <div class="sobre-ring">
+      <div class="sobre-circle">
+        <svg viewBox="0 0 30 30" fill="none" stroke="#F7E7CE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="24" height="16" rx="2"/><path d="M3 8l12 10L27 8"/></svg>
+      </div>
+    </div>
+    <span class="sobre-lbl">Toca para abrir</span>
+  </button>
+  <video class="sobre-video" id="sobreVideo" muted playsinline preload="auto">
+    <source src="sobre-video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div id="prog"></div>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BOTONES FLOTANTES -->
+<button class="fab fab-menu" id="fabMenu" type="button" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+</button>
+<button class="fab fab-music" id="fabMusic" type="button" aria-label="Pausar o reproducir música">
+  <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+  <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+</button>
+
+<nav id="menu" aria-hidden="true">
+  <button class="menu-close" id="menuClose" type="button" aria-label="Cerrar menú">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+  <div class="menu-filete"></div>
+  <ul class="menu-list" id="menuList">
+    <li><a href="#fecha">Invitación</a></li>
+    <li><a href="#location">Ubicación</a></li>
+    <li><a href="#itinerary">Itinerario</a></li>
+    <li><a href="#dresscode">Vestimenta</a></li>
+    <li><a href="#gifts">Regalos</a></li>
+    <li><a href="#album">Álbum</a></li>
+    <li><a href="#gallery">Galería</a></li>
+    <li><a href="#family">Familia</a></li>
+    <li><a href="#rsvp">Confirmar</a></li>
+  </ul>
+  <p class="menu-foot">27 · 03 · 2027 · Tijuana</p>
+</nav>
+
+<main class="wrap">
+
+<!-- ═══════════ 1. HERO ═══════════ -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"><i class="hero-drift"></i></div>
+  <div class="hero-sheen" aria-hidden="true"><i></i></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-cnt" id="hCnt">
+    <p class="hero-eyebrow">Nuestra boda</p>
+    <h1 class="hero-names"><span class="foil-text foil-dark">Marian</span><span class="amp foil-text foil-dark d2">&amp;</span><span class="foil-text foil-dark d3">Raúl</span></h1>
+    <p class="hero-meta">27 · Marzo · 2027<span>Tijuana, Baja California</span></p>
+  </div>
+  <div class="h-scroll" id="hScroll"><div class="h-scroll-line"></div><span>Desliza</span></div>
+</section>
+
+<!-- ═══════════ 2. INVITACIÓN ═══════════ -->
+<section id="fecha">
+  <div class="ink-bg ink-top" aria-hidden="true"><i></i></div>
+  <p class="fch-headline foil-text on-ink">¡Nos casamos!</p>
+  <p class="fch-n1 on-ink">Marian</p>
+  <p class="fch-amp foil-text d2">&amp;</p>
+  <p class="fch-n1 on-ink">Raúl</p>
+  <p class="fch-honor on-ink">Creemos que algunas almas están destinadas a encontrarse. Hoy comenzamos un nuevo capítulo juntos y queremos que seas parte de este día tan especial en nuestra historia.</p>
+  <p class="fch-date on-ink">27 · 03 · 2027</p>
+</section>
+
+<!-- ═══════════ 3. CONTADOR ═══════════ -->
+<section id="countdown" data-top="#24445a" data-bot="#18303f">
+  <span class="lbl">Falta muy poco</span>
+  <h2 class="ttl foil-text foil-dark d1">Cuenta regresiva</h2>
+  <div class="cd-row" role="timer" aria-label="Cuenta regresiva para la boda">
+    <div class="cd-cell"><i class="cd-glow"></i><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Días</span></div>
+    <span class="cd-sep" aria-hidden="true">:</span>
+    <div class="cd-cell"><i class="cd-glow"></i><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
+    <span class="cd-sep" aria-hidden="true">:</span>
+    <div class="cd-cell"><i class="cd-glow"></i><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
+    <span class="cd-sep" aria-hidden="true">:</span>
+    <div class="cd-cell"><i class="cd-glow"></i><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Seg</span></div>
+  </div>
+  <p class="cd-sub">para celebrar juntos el 27 de marzo de 2027</p>
+</section>
+
+<!-- ═══════════ 4. UBICACIONES ═══════════ -->
+<section id="location">
+  <div class="ink-bg ink-oval" aria-hidden="true"><i></i></div>
+  <span class="lbl on-ink">Dónde y cuándo</span>
+  <h2 class="ttl foil-text d2">Ubicación</h2>
+  <div class="gline"></div>
+  <div class="loc-list">
+    <div class="loc-float levitate">
+      <article class="loc-card" tabindex="0">
+        <div class="loc-pin" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="18" width="28" height="22" rx="1"/><path d="M7 18 L24 8 L41 18"/><line x1="16" y1="24" x2="16" y2="34"/><line x1="24" y1="24" x2="24" y2="34"/><line x1="32" y1="24" x2="32" y2="34"/><line x1="8" y1="40" x2="40" y2="40"/></svg></div>
+        <span class="loc-eyebrow">Ceremonia civil</span>
+        <h3 class="loc-title foil-text d1">Registro Civil</h3>
+        <p class="loc-time">12:00 p.m.</p>
+        <p class="loc-venue">Registro Civil de Tijuana<br>Tijuana, Baja California</p>
+        <!-- PENDIENTE: link de ubicación del Registro Civil (el cliente no lo mandó) -->
+      </article>
+    </div>
+    <div class="loc-float levitate lev-b">
+      <article class="loc-card" tabindex="0">
+        <div class="loc-pin" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M40 20c0 11-16 22-16 22S8 31 8 20a16 16 0 0132 0z"/><path d="M24 26c-4-3-6-5-6-7.5a3.2 3.2 0 016-1.5 3.2 3.2 0 016 1.5c0 2.5-2 4.5-6 7.5z"/></svg></div>
+        <span class="loc-eyebrow">Recepción</span>
+        <h3 class="loc-title foil-text d3">Comida</h3>
+        <p class="loc-time">3:00 p.m.</p>
+        <p class="loc-venue">En casa de la familia<br>Tijuana, Baja California</p>
+        <a class="btn" href="https://www.google.com/maps/place/32.449427,-116.920988" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ver ubicación
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 5. CALENDARIO ═══════════ -->
+<section id="calendar">
+  <span class="lbl">No lo olvides</span>
+  <h2 class="ttl foil-text d4">Guarda la fecha</h2>
+  <div class="gline"></div>
+  <p class="sub">Agrega nuestra boda a tu calendario para no perderte ni un momento.</p>
+  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marian+%26+Ra%C3%BAl&dates=20270327T190000Z/20270328T050000Z&details=Ceremonia+civil+12:00+p.m.+%C2%B7+Recepci%C3%B3n+3:00+p.m.&location=Tijuana%2C+Baja+California" target="_blank" rel="noopener" id="calBtn" class="btn btn-ghost">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Agregar a calendario
+  </a>
+</section>
+
+<!-- ═══════════ 6. ITINERARIO ═══════════ -->
+<section id="itinerary">
+  <div class="ink-bg ink-corner" aria-hidden="true"><i></i></div>
+  <span class="lbl on-ink">El gran día</span>
+  <h2 class="ttl foil-text d1">Itinerario</h2>
+  <div class="gline"></div>
+  <div class="it-timeline">
+    <div class="it-line" id="itLine"></div>
+    <div class="it-step" data-side="l">
+      <div class="it-side">
+        <div class="it-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="19" cy="28" r="10"/><circle cx="29" cy="28" r="10"/><path d="M21 12l3-4 3 4-3 3z"/></svg></div>
+        <span class="it-time">12:00 p.m.</span>
+        <span class="it-name">Civil</span>
+        <span class="it-place">Registro Civil de Tijuana</span>
+      </div>
+      <div class="it-dot"></div>
+      <div></div>
+    </div>
+    <div class="it-step" data-side="r">
+      <div></div>
+      <div class="it-dot"></div>
+      <div class="it-side">
+        <div class="it-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="6" x2="12" y2="42"/><line x1="8" y1="6" x2="8" y2="16"/><line x1="16" y1="6" x2="16" y2="16"/><path d="M8 16h8"/><path d="M36 6c4 4 4 12 0 16v20"/><circle cx="24" cy="28" r="7"/></svg></div>
+        <span class="it-time">3:00 p.m.</span>
+        <span class="it-name">Comida</span>
+        <span class="it-place">En casa de la familia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dresscode" class="dc2" aria-labelledby="dc2-title">
+  <div class="ink-bg ink-top flip" aria-hidden="true"><i></i></div>
+  <div class="dc2-inner">
+
+    <h2 id="dc2-title" class="dc2-title foil-text">Código de vestimenta</h2>
+    <p class="dc2-type">Semiformal</p>
+
+    <div class="dc2-figures">
+      <figure class="dc2-fig">
+        <img class="dc2-img" src="caballero.png" width="300" height="610" decoding="async"
+             alt="Dibujo de un caballero vestido de traje">
+        <figcaption class="dc2-fig-label">Caballeros</figcaption>
+      </figure>
+      <figure class="dc2-fig">
+        <img class="dc2-img dc2-img--b" src="dama.png" width="248" height="604" decoding="async"
+             alt="Dibujo de una dama con vestido largo">
+        <figcaption class="dc2-fig-label">Damas</figcaption>
+      </figure>
+    </div>
+
+    <p class="dc2-msg">Reservamos el blanco para la novia.</p>
+
+    <div class="dc2-palettes">
+
+      <!-- SUGERIDOS -->
+      <div class="dc2-group" data-dc2-cycle>
+        <p class="dc2-group-label">Sugeridos</p>
+        <div class="dc2-cycle" aria-hidden="true">
+          <div class="dc2-orb-wrap">
+            <div class="dc2-orb">
+              <span class="dc2-layer is-on" style="--c:#87b5c4"></span>
+              <span class="dc2-layer" style="--c:#97abbe"></span>
+              <span class="dc2-layer" style="--c:#776012"></span>
+              <span class="dc2-gloss"></span>
+              <span class="dc2-sweep"></span>
+            </div>
+          </div>
+          <div class="dc2-names">
+            <span class="dc2-name is-on">Azul cielo</span>
+            <span class="dc2-name">Azul grisáceo</span>
+            <span class="dc2-name">Oro viejo</span>
+          </div>
+        </div>
+        <ul class="dc2-list">
+          <li><span class="dc2-dot" style="--c:#87b5c4"></span>Azul cielo</li>
+          <li><span class="dc2-dot" style="--c:#97abbe"></span>Azul grisáceo</li>
+          <li><span class="dc2-dot" style="--c:#776012"></span>Oro viejo</li>
+        </ul>
+      </div>
+
+      <!-- EVITAR -->
+      <div class="dc2-group" data-dc2-cycle data-dc2-delay="1800">
+        <p class="dc2-group-label">Evitar</p>
+        <div class="dc2-cycle" aria-hidden="true">
+          <div class="dc2-orb-wrap">
+            <div class="dc2-orb">
+              <span class="dc2-layer dc2-layer--light is-on" style="--c:#FFFFFF"></span>
+              <span class="dc2-layer dc2-layer--light" style="--c:#ecdcc1"></span>
+              <span class="dc2-gloss"></span>
+              <span class="dc2-sweep"></span>
+            </div>
+          </div>
+          <div class="dc2-names">
+            <span class="dc2-name is-on">Blanco</span>
+            <span class="dc2-name">Champán</span>
+          </div>
+        </div>
+        <ul class="dc2-list">
+          <li><span class="dc2-dot dc2-dot--light" style="--c:#FFFFFF"></span>Blanco</li>
+          <li><span class="dc2-dot dc2-dot--light" style="--c:#ecdcc1"></span>Champán</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Aviso obligatorio: solo adultos -->
+    <div class="dc2-adults">
+      <svg class="dc2-adults-ico" viewBox="0 0 32 30" aria-hidden="true">
+        <path d="M16 7 C19 1 30 1 30 10 C30 19 16 28 16 28 C16 28 2 19 2 10 C2 1 13 1 16 7 Z"/>
+      </svg>
+      <p class="dc2-adults-title">Evento solo para adultos</p>
+      <p class="dc2-adults-text">Con todo cariño, hemos decidido que esta celebración sea solo para adultos. Gracias por su comprensión.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="gifts" class="env-gifts" aria-labelledby="env-gifts-title">
+  <div class="ink-bg ink-corner flip" aria-hidden="true"><i></i></div>
+  <div class="env-gifts-inner">
+
+    <h2 id="env-gifts-title" class="env-gifts-title foil-text">Mesa de regalos</h2>
+    <p class="env-gifts-intro">Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros, te compartimos nuestra mesa:</p>
+
+    <!-- Tarjeta Amazon (.gift-card para el sheen) -->
+    <div class="gift-card env-amazon">
+      <svg class="env-amazon-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="7" y="19" width="34" height="23" rx="2.5"/>
+        <rect x="4.5" y="13" width="39" height="7" rx="2"/>
+        <path d="M24 13v29"/>
+        <path d="M24 13c-3-6-11-8-11-3 0 3 6 3 11 3z"/>
+        <path d="M24 13c3-6 11-8 11-3 0 3-6 3-11 3z"/>
+      </svg>
+      <p class="env-amazon-name">Amazon</p>
+      <p class="env-amazon-sub">Mesa de regalos</p>
+      <a class="env-amazon-btn" href="https://www.amazon.com.mx/wedding/guest-view/4J3EL0VOW7KE"
+         target="_blank" rel="noopener">Ver mesa en Amazon</a>
+    </div>
+
+    <!-- Lluvia de sobres -->
+    <div class="env-zone" id="envZone">
+      <div class="env-rain" id="envRain" aria-hidden="true"></div>
+
+      <div class="env-stage">
+        <p class="env-kicker">Lluvia de sobres</p>
+
+        <button class="env-interactive" id="envGift" type="button"
+                aria-expanded="false" aria-controls="envOpenContent" aria-label="Sobre: toca para abrir">
+          <span class="env-body" id="envGiftBody">
+            <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="envPaperGrad" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" style="stop-color:var(--gold-soft)"/>
+                  <stop offset="100%" style="stop-color:#fbf6ec"/>
+                </linearGradient>
+              </defs>
+              <rect class="env-paper" x="18" y="52" width="224" height="132" rx="8"/>
+              <path class="env-fold" d="M18 184 L130 110 L242 184"/>
+              <rect class="env-inner-line" x="24" y="58" width="212" height="120" rx="5"/>
+            </svg>
+            <span class="env-flap-wrap" aria-hidden="true">
+              <svg viewBox="0 0 224 86" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="envFlapGrad" x1="0" y1="1" x2="1" y2="0">
+                    <stop offset="0%" style="stop-color:var(--gold-soft)"/>
+                    <stop offset="100%" style="stop-color:#fffaf0"/>
+                  </linearGradient>
+                </defs>
+                <path class="env-flap" d="M0 0 L112 86 L224 0 Z"/>
+              </svg>
+            </span>
+            <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
+              <circle cx="30" cy="30" r="28" class="env-seal-base"/>
+              <circle cx="30" cy="30" r="28" class="env-seal-edge"/>
+              <circle cx="30" cy="30" r="21.5" class="env-seal-ring"/>
+              <text x="30" y="37" text-anchor="middle" class="env-seal-txt">R&amp;M</text>
+            </svg>
+          </span>
+        </button>
+
+        <button class="env-tap-hint" id="envGiftHint" type="button"
+                aria-controls="envOpenContent" aria-expanded="false">Toca para abrir</button>
+
+        <div class="env-open-content" id="envOpenContent" aria-live="polite" hidden>
+          <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="8" y="22" width="36" height="24" rx="5"/>
+            <path d="M8 30 Q26 38 44 30"/>
+            <rect x="18" y="8" width="16" height="16" rx="2"/>
+            <path d="M18 8 Q26 3 34 8"/>
+            <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
+          </svg>
+          <p class="env-title">Tu presencia es nuestro regalo</p>
+          <p class="env-desc">Si deseas hacernos un obsequio, el día del evento habrá un buzón para recibir tu sobre.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ ÁLBUM ═══════════ -->
+<section id="album">
+  <div class="ink-bg ink-oval flip" aria-hidden="true"><i></i></div>
+  <span class="lbl on-ink">Captura cada momento</span>
+  <h2 class="ttl foil-text d3">Álbum de fotos</h2>
+  <div class="gline"></div>
+  <p class="sub on-ink">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
+  <div class="album-qr levitate lev-c" data-fecha="2027-03-27">
+    <img src="qr-album.png" alt="Código QR del álbum de fotos" width="210" height="210">
+    <a class="btn" href="/album">Subir mis fotos</a>
+  </div>
+  <p class="album-aviso on-ink">El álbum de fotos se habilita el día del evento. Regresa aquí y sube todas tus fotos de la celebración.</p>
+</section>
+
+<!-- ═══════════ GALERÍA · CARRUSEL 3D (Marian & Raúl) ═══════════
+     Requiere: gallery.css, gallery.js, GSAP 3.12.5 (core). Llamar initGallery3D() tras cargar GSAP.
+     Fotos: placeholders de fotos-cliente/ (carga normal, sin atributo loading, a propósito). -->
+<section id="gallery" class="g3d-section" aria-label="Galería de fotos">
+  <p class="g3d-eyebrow">Nuestros momentos</p>
+  <h2 class="g3d-title foil-text">Nuestra historia</h2>
+  <span class="g3d-orn" aria-hidden="true"></span>
+
+  <div class="g3d-scene" id="g3d-scene">
+    <div class="g3d-ring" id="g3d-ring">
+      <div class="g3d-card" role="button" tabindex="0" aria-label="Ver foto 1 de 6">
+        <div class="g3d-frame"><img src="fotos-cliente/foto-1.jpg" alt="Marian y Raúl en las escaleras" draggable="false" style="object-position:50% 70%"></div>
+        <div class="g3d-refl" aria-hidden="true"><div class="g3d-refl-flip"><img src="fotos-cliente/foto-1.jpg" alt="" draggable="false" style="object-position:50% 70%"></div><i class="g3d-veil"></i></div>
+      </div>
+      <div class="g3d-card" role="button" tabindex="0" aria-label="Ver foto 2 de 6">
+        <div class="g3d-frame"><img src="fotos-cliente/foto-2.jpg" alt="Marian y Raúl caminando de la mano" draggable="false" style="object-position:50% 60%"></div>
+        <div class="g3d-refl" aria-hidden="true"><div class="g3d-refl-flip"><img src="fotos-cliente/foto-2.jpg" alt="" draggable="false" style="object-position:50% 60%"></div><i class="g3d-veil"></i></div>
+      </div>
+      <div class="g3d-card" role="button" tabindex="0" aria-label="Ver foto 3 de 6">
+        <div class="g3d-frame"><img src="fotos-cliente/foto-4.jpg" alt="Marian sonriendo con Raúl detrás" draggable="false" style="object-position:50% 85%"></div>
+        <div class="g3d-refl" aria-hidden="true"><div class="g3d-refl-flip"><img src="fotos-cliente/foto-4.jpg" alt="" draggable="false" style="object-position:50% 85%"></div><i class="g3d-veil"></i></div>
+      </div>
+      <div class="g3d-card" role="button" tabindex="0" aria-label="Ver foto 4 de 6">
+        <div class="g3d-frame"><img src="fotos-cliente/foto-7.jpg" alt="Marian y Raúl besándose frente al ventanal" draggable="false" style="object-position:71% 50%"></div>
+        <div class="g3d-refl" aria-hidden="true"><div class="g3d-refl-flip"><img src="fotos-cliente/foto-7.jpg" alt="" draggable="false" style="object-position:71% 50%"></div><i class="g3d-veil"></i></div>
+      </div>
+      <div class="g3d-card" role="button" tabindex="0" aria-label="Ver foto 5 de 6">
+        <div class="g3d-frame"><img src="fotos-cliente/foto-5.jpg" alt="Marian y Raúl paseando por la ciudad" draggable="false" style="object-position:50% 50%"></div>
+        <div class="g3d-refl" aria-hidden="true"><div class="g3d-refl-flip"><img src="fotos-cliente/foto-5.jpg" alt="" draggable="false" style="object-position:50% 50%"></div><i class="g3d-veil"></i></div>
+      </div>
+      <div class="g3d-card" role="button" tabindex="0" aria-label="Ver foto 6 de 6">
+        <div class="g3d-frame"><img src="fotos-cliente/foto-6.jpg" alt="Raúl corriendo con Marian detrás" draggable="false" style="object-position:50% 55%"></div>
+        <div class="g3d-refl" aria-hidden="true"><div class="g3d-refl-flip"><img src="fotos-cliente/foto-6.jpg" alt="" draggable="false" style="object-position:50% 55%"></div><i class="g3d-veil"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="g3d-hint"><span aria-hidden="true">&#8592;</span> Desliza para girar <span aria-hidden="true">&#8594;</span></p>
+
+  <!-- Lightbox: initGallery3D() lo mueve a <body> para que position:fixed no dependa de ancestros transformados -->
+  <div class="g3d-lb" id="g3d-lb" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+    <button class="g3d-lb-close" type="button" aria-label="Cerrar">&times;</button>
+    <button class="g3d-lb-nav g3d-lb-prev" type="button" aria-label="Foto anterior">&#8249;</button>
+    <figure class="g3d-lb-fig"><img class="g3d-lb-img" src="" alt=""></figure>
+    <button class="g3d-lb-nav g3d-lb-next" type="button" aria-label="Foto siguiente">&#8250;</button>
+    <p class="g3d-lb-count" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ═══════════ FAMILIA ═══════════ -->
+<section id="family">
+  <div class="ink-bg ink-hero flip" aria-hidden="true"><i></i></div>
+  <span class="lbl on-ink">Con su bendición</span>
+  <h2 class="ttl foil-text d5">Nuestras familias</h2>
+  <div class="gline"></div>
+  <div class="fam-grid">
+    <div class="fam-card levitate">
+      <span class="fam-role">Mamá de la novia</span>
+      <span class="fam-name stg">Arcelia Nevarez Jimenez</span>
+    </div>
+    <div class="fam-card levitate lev-b">
+      <span class="fam-role">Padres del novio</span>
+      <span class="fam-name stg">Hexal Bersain Cruz Archila</span>
+      <span class="fam-amp stg">&amp;</span>
+      <span class="fam-name stg">Maria Remedios Gonzalez</span>
+    </div>
+    <div class="fam-card levitate lev-c">
+      <span class="fam-role">Testigos de la novia</span>
+      <span class="fam-name stg">Melissa Beatriz Nevarez Lopez</span>
+      <span class="fam-amp stg">&amp;</span>
+      <span class="fam-name stg">Perla Jimenez Garcia</span>
+    </div>
+    <div class="fam-card levitate">
+      <span class="fam-role">Testigos del novio</span>
+      <span class="fam-name fam-pend stg">Por confirmar</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ RSVP · Panel de Invitados, X pases (Marian & Raúl) ═══════════
+     Requiere: rsvp.css, rsvp.js. Llamar initRSVP2() al cargar (no depende de GSAP).
+     Evento SOLO ADULTOS: sin recuadro de menores. Sin WhatsApp. -->
+<section id="rsvp" class="rv-section" aria-labelledby="rv-title">
+  <div class="ink-bg ink-corner" aria-hidden="true"><i></i></div>
+  <p class="rv-eyebrow">Confirmación de asistencia</p>
+  <h2 class="rv-title foil-text" id="rv-title">¿Nos acompañas?</h2>
+  <p class="rv-adults"><span class="rv-adults-dot" aria-hidden="true"></span>Evento solo para adultos<span class="rv-adults-dot" aria-hidden="true"></span></p>
+
+  <p class="rv-hi" id="rv-hi" hidden></p>
+  <p class="rv-note" id="rv-pases-note"></p>
+
+  <div class="rv-pases" id="rv-pases-display" hidden>
+    <span class="rv-pases-label">Pases</span>
+    <span class="rv-pases-num" id="rv-pases-num">1</span>
+  </div>
+
+  <p class="rv-dl">Confirma antes del 27 de febrero de 2027</p>
+
+  <!-- BANDEJA (se colapsa al confirmar) -->
+  <div class="rv-bandeja" id="rv-bandeja">
+    <div class="rv-toggle" role="group" aria-label="¿Asistirás?">
+      <button class="rv-toggle-btn" id="rv-btn-yes" type="button" aria-pressed="false">Asistiré</button>
+      <button class="rv-toggle-btn" id="rv-btn-no" type="button" aria-pressed="false">No podré asistir</button>
+    </div>
+    <div class="rv-fields" id="rv-fields" hidden></div>
+    <button class="rv-btn" id="rv-confirm-btn" type="button"><span id="rv-btn-text">Confirmar asistencia</span></button>
+  </div>
+
+  <!-- PANEL DE GRACIAS (oculto hasta confirmar) -->
+  <div class="rv-gracias" id="rv-gracias" hidden>
+    <svg class="rv-gracias-icon" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 9.5"/></svg>
+    <p class="rv-gracias-title" id="rv-gracias-title"></p>
+    <p class="rv-gracias-sub" id="rv-gracias-sub"></p>
+    <button class="rv-editar-btn" id="rv-editar-btn" type="button">Modificar mi respuesta</button>
+  </div>
+
+  <p class="rv-feedback" id="rv-feedback" role="status" aria-live="polite"></p>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer id="footer">
+  <div class="ink-bg ink-footer" aria-hidden="true"><i></i></div>
+  <p class="ft-msg on-ink">Te esperamos con mucho cariño…</p>
+  <p class="ft-nofaltes foil-text d2">¡No faltes!</p><br>
+  <p class="ft-names foil-text d4">Marian &amp; Raúl</p>
+  <p class="ft-date on-ink">Tijuana · 27 de marzo de 2027</p>
+  <div class="el-sep"></div>
+  <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="el-credit">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    <span>Diseño por @elysium.invitaciones</span>
+  </a>
+</footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Revela solo lo que está fuera de pantalla; lo visible se queda visible. */
+function reveal(els, from, opts){
+  els = gsap.utils.toArray(els); if(!els.length) return;
+  opts = opts || {};
+  const trig = opts.trigger || els[0];
+  const r = (typeof trig === 'string' ? document.querySelector(trig) : trig).getBoundingClientRect();
+  if (RM) { from = { opacity: 0 }; }
+  if (r.top < window.innerHeight * .9) return;
+  const to = {}; Object.keys(from).forEach(k => { to[k] = (k === 'opacity') ? 1 : (k === 'scale' ? 1 : (k === 'filter' ? 'blur(0px)' : 0)); });
+  gsap.set(els, from);
+  ScrollTrigger.create({ trigger: trig, start: opts.start || 'top 86%', once: true,
+    onEnter(){ gsap.to(els, Object.assign({}, to, { duration: RM ? .4 : (opts.duration || .9), stagger: opts.stagger || 0, ease: opts.ease || 'power3.out', delay: opts.delay || 0, clearProps: 'transform' })); } });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const sobreBtn = document.getElementById('sobreBtn');
+  const sobreVid = document.getElementById('sobreVideo');
+  const loaderEl = document.getElementById('loader');
+  let started = false;
+
+  sobreBtn.addEventListener('click', () => {
+    sobreBtn.style.opacity = '0'; sobreBtn.style.pointerEvents = 'none';
+    sobreVid.play();
+    function crossfade(){ sobreVid.style.opacity = '1'; gsap.to('.sobre-img',{opacity:0,duration:.5,ease:'power2.out'}); }
+    if (sobreVid.readyState >= 2) crossfade(); else sobreVid.addEventListener('playing', crossfade, {once:true});
+    startMusic();
+    setTimeout(finish, 9000); // respaldo si el video no avanza
+  });
+
+  const VIDEO_CUT = 7.5;
+  sobreVid.addEventListener('timeupdate', () => { if (sobreVid.currentTime >= VIDEO_CUT) finish(); });
+
+  function finish(){
+    if (started) return; started = true;
+    sobreVid.pause();
+    gsap.to(loaderEl, { opacity:0, duration:.6, ease:'power2.out', onComplete(){ loaderEl.remove(); initInvitation(); } });
+  }
+});
+
+function initInvitation(){
+  document.getElementById('fabMenu').classList.add('is-ready');
+  document.getElementById('fabMusic').classList.add('is-ready');
+  initSectionFades();
+  splitTitles();
+  addSectionMedals();
+  addCorners();
+  heroAnim();
+  initGlobalParticles();
+  scrollAnims();
+  countdown(); setInterval(countdown, 1000);
+  initMenu();
+  initLocCards();
+  initAlbum();
+  if (window.initDressCode2) initDressCode2();
+  if (window.initEnvRain) initEnvRain();
+  if (window.initGallery3D) initGallery3D();
+  if (window.initRSVP2) initRSVP2();
+  requestAnimationFrame(() => ScrollTrigger.refresh());
+}
+
+/* ── PROGRESO ─────────────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  document.getElementById('prog').style.transform = 'scaleX(' + (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) + ')';
+}, { passive:true });
+
+/* ── 2. FUNDIDO UNIFORME ENTRE SECCIONES ─────────────── */
+function initSectionFades(){
+  const secs = Array.from(document.querySelectorAll('.wrap > section, .wrap > footer'));
+  const pageBg = getComputedStyle(document.body).backgroundColor;
+  function parse(c){
+    if (!c) return null;
+    c = c.trim();
+    if (c[0] === '#') { let h = c.slice(1); if (h.length === 3) h = h.split('').map(x => x + x).join(''); return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)]; }
+    const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null;
+    const p = m[1].split(',').map(parseFloat);
+    if (p.length === 4 && p[3] === 0) return null;
+    return p.slice(0,3);
+  }
+  function edge(sec, which){
+    const d = sec.dataset[which]; if (d) return parse(d);
+    return parse(getComputedStyle(sec).backgroundColor) || parse(pageBg);
+  }
+  function grad(dir, rgb){
+    const stops = [];
+    for (let i = 0; i <= 8; i++){
+      const t = i / 8, a = 1 - t * t * (3 - 2 * t);
+      stops.push(`rgba(${rgb.map(Math.round).join(',')},${a.toFixed(3)}) ${(t * 100).toFixed(1)}%`);
+    }
+    return `linear-gradient(${dir},${stops.join(',')})`;
+  }
+  let css = '';
+  for (let i = 0; i < secs.length - 1; i++){
+    const A = secs[i], B = secs[i + 1];
+    const a = edge(A, 'bot'), b = edge(B, 'top');
+    if (A.id === 'hero'){
+      css += `#hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;z-index:3;pointer-events:none;background:${grad('to top', b)}}`;
+      continue;
+    }
+    const mid = [0,1,2].map(k => (a[k] + b[k]) / 2);
+    css += `#${A.id}::after{content:'';position:absolute;left:0;right:0;bottom:0;height:170px;z-index:-1;pointer-events:none;background:${grad('to top', mid)}}`;
+    css += `#${B.id}::before{content:'';position:absolute;left:0;right:0;top:0;height:170px;z-index:-1;pointer-events:none;background:${grad('to bottom', mid)}}`;
+  }
+  const st = document.createElement('style'); st.id = 'secFades'; st.textContent = css; document.head.appendChild(st);
+}
+
+/* ── TÍTULOS: reveal por palabra (cada palabra conserva el foil) ── */
+function splitTitles(){
+  document.querySelectorAll('.ttl').forEach(t => {
+    if (t.dataset.split) return; t.dataset.split = '1';
+    const foil = t.classList.contains('foil-text');
+    const extra = Array.from(t.classList).filter(c => /^(d\d|foil-dark)$/.test(c)).join(' ');
+    const words = t.textContent.trim().split(/\s+/);
+    t.innerHTML = words.map(w => `<span class="w${foil ? ' foil-text ' + extra : ''}">${w}</span>`).join(' ');
+    if (foil) t.classList.remove('foil-text','foil-dark');
+    reveal(t.querySelectorAll('.w'), { opacity:0, y:26 }, { trigger:t, stagger:.09, duration:.8 });
+  });
+}
+
+/* ── 1. HERO ─────────────────────────────────────────── */
+function heroAnim(){
+  gsap.fromTo('#hCnt', { opacity:0, y:24 }, { opacity:1, y:0, duration:1.2, ease:'power3.out', clearProps:'transform' });
+  if (RM) return;
+  gsap.fromTo('#hCnt', { y:0, opacity:1, filter:'blur(0px)' }, { y:-110, opacity:0, filter:'blur(10px)', ease:'none', immediateRender:false,
+    scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
+  gsap.fromTo('#hScroll', { opacity:1 }, { opacity:0, ease:'none', immediateRender:false, scrollTrigger:{ trigger:'#hero', start:'top top', end:'20% top', scrub:true } });
+  gsap.fromTo('#heroBg', { y:0 }, { y:-70, ease:'none', immediateRender:false,
+    scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
+}
+
+/* ── PARTÍCULAS (bokeh azul/champán de la plantilla) ── */
+function initGlobalParticles(){
+  if (RM) return;
+  const cvs = document.createElement('canvas');
+  cvs.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:500;';
+  document.body.appendChild(cvs);
+  const ctx = cvs.getContext('2d');
+  const COLS = ['rgba(95,148,180,','rgba(177,202,211,','rgba(201,171,114,','rgba(247,231,206,'];
+  let W, H; const pts = [];
+  function resize(){ W = cvs.width = innerWidth; H = cvs.height = innerHeight; }
+  function spawn(any){ const a = (0.08 + Math.random() * .14).toFixed(2);
+    return { x:Math.random()*(W||420), y:any?Math.random()*(H||750):(H||750)+10, r:1.1+Math.random()*3.4, vx:(Math.random()-.5)*.13, vy:-(0.09+Math.random()*.2), fill:COLS[Math.floor(Math.random()*COLS.length)]+a+')', ph:Math.random()*6.28 }; }
+  resize(); addEventListener('resize', resize, { passive:true });
+  for (let i = 0; i < 26; i++) pts.push(spawn(true));
+  (function tick(){
+    ctx.clearRect(0,0,W,H);
+    for (let i = pts.length - 1; i >= 0; i--){ const p = pts[i]; p.ph += .006; p.x += p.vx + Math.sin(p.ph) * .08; p.y += p.vy;
+      if (p.y < -8) Object.assign(pts[i], spawn(false)); if (p.x < -8) p.x = W + 4; if (p.x > W + 8) p.x = -4;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fillStyle = p.fill; ctx.fill(); }
+    requestAnimationFrame(tick);
+  })();
+}
+
+/* ── ANIMACIONES DE SCROLL (capa de vida) ─────────────── */
+function scrollAnims(){
+  // Invitación
+  reveal('#fecha .fch-headline, #fecha .fch-n1, #fecha .fch-amp, #fecha .fch-honor, #fecha .fch-date', { opacity:0, y:22 }, { trigger:'#fecha', stagger:.12 });
+  // Contador
+  reveal('#countdown .cd-cell', { opacity:0, y:20, scale:.9 }, { trigger:'#countdown', stagger:.1, ease:'back.out(1.6)' });
+  // Ubicaciones
+  reveal('#location .loc-card', { opacity:0, y:40 }, { trigger:'#location .loc-list', stagger:.18 });
+  // Itinerario: línea que se dibuja con el scroll + momentos alternados
+  if (!RM) gsap.fromTo('#itLine', { scaleY:0 }, { scaleY:1, ease:'none', scrollTrigger:{ trigger:'#itinerary .it-timeline', start:'top 80%', end:'bottom 60%', scrub:true } });
+  document.querySelectorAll('#itinerary .it-step').forEach(st => {
+    const side = st.querySelector('.it-side'); const ico = st.querySelector('.it-ico');
+    reveal(side, { opacity:0, x: st.dataset.side === 'l' ? -40 : 40 }, { trigger:st, start:'top 82%' });
+    reveal(ico, { scale:.5 }, { trigger:st, start:'top 82%', ease:'back.out(2.4)', delay:.25, duration:.7 });
+  });
+  // Calendario
+  reveal('#calendar .sub, #calBtn', { opacity:0, y:16 }, { trigger:'#calendar', stagger:.12 });
+  // Álbum
+  reveal('#album .album-qr', { opacity:0, y:30, scale:.94 }, { trigger:'#album .album-qr', ease:'back.out(1.4)' });
+  // Familias: nombre por nombre
+  reveal('#family .stg', { opacity:0, y:14 }, { trigger:'#family .fam-grid', stagger:.09, duration:.7 });
+  // Footer
+  reveal('#footer .ft-msg, #footer .ft-nofaltes, #footer .ft-names, #footer .ft-date', { opacity:0, y:22 }, { trigger:'#footer', stagger:.14 });
+  // Mesa de regalos: destello que cruza cada card al entrar
+  document.querySelectorAll('.gift-card').forEach(card => {
+    if (!card.querySelector('.sheen')) { const s = document.createElement('i'); s.className = 'sheen'; s.setAttribute('aria-hidden','true'); card.appendChild(s); }
+    if (RM) return;
+    ScrollTrigger.create({ trigger:card, start:'top 82%', once:true, onEnter(){
+      gsap.fromTo(card.querySelector('.sheen'), { xPercent:-140 }, { xPercent:260, duration:1.4, ease:'power2.inOut', delay:.2 }); } });
+  });
+}
+
+/* ── CONTADOR con giro + brillo ───────────────────────── */
+const WED = new Date('2027-03-27T12:00:00-07:00');
+const prevCd = {};
+function pad(n){ return String(n).padStart(2,'0'); }
+function setCd(id, val){
+  const el = document.getElementById(id); if (!el) return;
+  if (prevCd[id] === val) return; const first = prevCd[id] === undefined; prevCd[id] = val;
+  el.innerHTML = '<b>' + val + '</b>';
+  if (first || RM) return;
+  gsap.fromTo(el.firstChild, { rotateX:-90, opacity:.2 }, { rotateX:0, opacity:1, duration:.45, ease:'back.out(1.8)' });
+  const glow = el.parentNode.querySelector('.cd-glow');
+  if (glow) gsap.fromTo(glow, { opacity:.9, scale:.7 }, { opacity:0, scale:1.2, duration:.9, ease:'power2.out' });
+}
+function countdown(){
+  let d = WED - Date.now(); if (d < 0) d = 0;
+  setCd('cd-d', pad(Math.floor(d/86400000))); setCd('cd-h', pad(Math.floor((d%86400000)/3600000)));
+  setCd('cd-m', pad(Math.floor((d%3600000)/60000))); setCd('cd-s', pad(Math.floor((d%60000)/1000)));
+}
+
+/* ── MÚSICA (botón discreto) ──────────────────────────── */
+const aud = document.getElementById('bgMusic');
+const mBtn = document.getElementById('fabMusic');
+function startMusic(){
+  if (!aud) return;
+  if (!aud.paused) { mBtn.classList.add('is-playing'); return; }
+  aud.play().then(() => mBtn.classList.add('is-playing')).catch(() => {});
+}
+mBtn.addEventListener('click', () => {
+  if (aud.paused) { aud.play().catch(() => {}); mBtn.classList.add('is-playing'); }
+  else { aud.pause(); mBtn.classList.remove('is-playing'); }
+});
+aud.addEventListener('play', () => mBtn.classList.add('is-playing'));
+aud.addEventListener('pause', () => mBtn.classList.remove('is-playing'));
+
+/* ── 12. MENÚ ─────────────────────────────────────────── */
+function initMenu(){
+  const menu = document.getElementById('menu'), fab = document.getElementById('fabMenu');
+  const items = menu.querySelectorAll('.menu-list li'), links = menu.querySelectorAll('.menu-list a');
+  // solo secciones que existen
+  links.forEach(a => { if (!document.querySelector(a.getAttribute('href'))) a.parentNode.remove(); });
+  function open(){
+    menu.classList.add('open'); menu.setAttribute('aria-hidden','false'); fab.setAttribute('aria-expanded','true');
+    menu.querySelectorAll('.menu-list li').forEach((li, i) => { li.style.transitionDelay = RM ? '0s' : (0.12 + i * 0.07) + 's'; });
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function close(){
+    menu.classList.remove('open'); menu.setAttribute('aria-hidden','true'); fab.setAttribute('aria-expanded','false');
+    menu.querySelectorAll('.menu-list li').forEach(li => { li.style.transitionDelay = '0s'; });
+    document.documentElement.style.overflow = '';
+  }
+  fab.addEventListener('click', open);
+  document.getElementById('menuClose').addEventListener('click', close);
+  menu.querySelectorAll('.menu-list a').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); close();
+    setTimeout(() => t && t.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block:'start' }), 80);
+  }));
+  // sección actual en cursiva
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    if (!en.isIntersecting) return;
+    menu.querySelectorAll('.menu-list a').forEach(a => a.classList.toggle('cur', a.getAttribute('href') === '#' + en.target.id));
+  }), { rootMargin:'-45% 0px -45% 0px' });
+  menu.querySelectorAll('.menu-list a').forEach(a => { const s = document.querySelector(a.getAttribute('href')); s && io.observe(s); });
+}
+
+/* ── UBICACIONES: tocar eleva la tarjeta ──────────────── */
+function initLocCards(){
+  document.querySelectorAll('.loc-card').forEach(c => {
+    c.addEventListener('click', e => { if (e.target.closest('a')) return; c.classList.toggle('lift'); });
+    c.addEventListener('mouseenter', () => { if (matchMedia('(hover:hover)').matches) c.classList.add('lift'); });
+    c.addEventListener('mouseleave', () => { if (matchMedia('(hover:hover)').matches) c.classList.remove('lift'); });
+  });
+}
+
+/* ── ÁLBUM: QR con blur hasta el día del evento ──────── */
+function initAlbum(){
+  const box = document.querySelector('.album-qr'); if (!box) return;
+  const p = box.dataset.fecha.split('-');
+  if (new Date() < new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0)) box.classList.add('bloqueado');
+}
+
+/* ── MEDALLAS / ESQUINAS (plantilla) ──────────────────── */
+function addSectionMedals(){
+  const map = { location:'✦', calendar:'✧', itinerary:'❃', album:'◈', family:'❖' };
+  Object.keys(map).forEach(id => {
+    const sec = document.getElementById(id); if (!sec) return;
+    const lbl = sec.querySelector('.lbl'); if (!lbl) return;
+    const m = document.createElement('div'); m.className = 'sec-medal'; m.innerHTML = `<span>${map[id]}</span>`;
+    sec.insertBefore(m, lbl);
+    reveal(m, { opacity:0, scale:.7 }, { trigger:sec, ease:'back.out(1.6)' });
+  });
+}
+function addCorners(){
+  document.querySelectorAll('.wrap > section:not(#hero), #footer').forEach(el => {
+    ['tl','tr','bl','br'].forEach(p => { const c = document.createElement('div'); c.className = 'corner ' + p; el.appendChild(c); });
+    ScrollTrigger.create({ trigger:el, start:'top 90%', once:true, onEnter(){ el.querySelectorAll('.corner').forEach((c,i) => setTimeout(() => c.classList.add('on'), i * 110)); } });
+  });
+}
+
+/* ── CÓDIGO DE VESTIMENTA (dc2-) ─────────────────────────────
+   Bolita de color con fundido entre capas apiladas (solo opacity).
+   Cada color ~2.5 s visible + 1.2 s de transición, en bucle.
+   La capa entrante sube de z-index y se funde ENCIMA de la saliente
+   (sin "hueco" a mitad del fundido); la saliente se apaga ya tapada.
+   Se pausa fuera de pantalla y con la pestaña oculta.
+   Sin dependencias (no usa GSAP). Idempotente. */
+(function(){
+  var HOLD = 2500, FADE = 1200;
+
+  function initDressCode2(){
+    var sec = document.getElementById('dresscode');
+    if(!sec || sec.dataset.dc2Init) return;
+    sec.dataset.dc2Init = '1';
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce) return; /* el CSS ya muestra la fila de bolitas */
+
+    var groups = Array.prototype.slice.call(sec.querySelectorAll('[data-dc2-cycle]'));
+    var cyclers = [];
+
+    groups.forEach(function(g){
+      var layers = Array.prototype.slice.call(g.querySelectorAll('.dc2-layer'));
+      var names  = Array.prototype.slice.call(g.querySelectorAll('.dc2-name'));
+      if(layers.length < 2) return; /* un solo color: fija, sin animación */
+
+      var idx = 0, z = 1, timer = null, offTimer = null, running = false;
+      var firstDelay = parseInt(g.getAttribute('data-dc2-delay') || '0', 10);
+      layers.forEach(function(l, i){ l.style.zIndex = (i === 0 ? 1 : 0); });
+
+      function step(){
+        var prev = idx;
+        idx = (idx + 1) % layers.length;
+        var inL = layers[idx], outL = layers[prev];
+        inL.style.zIndex = ++z;
+        inL.classList.add('is-on');
+        if(names[prev]) names[prev].classList.remove('is-on');
+        if(names[idx])  names[idx].classList.add('is-on');
+        clearTimeout(offTimer);
+        offTimer = setTimeout(function(){ outL.classList.remove('is-on'); }, FADE + 40);
+        if(z > 900){ /* normaliza z-index de vez en cuando */
+          layers.forEach(function(l){ l.style.zIndex = 0; });
+          z = 1; inL.style.zIndex = 1;
+        }
+        timer = setTimeout(step, HOLD + FADE);
+      }
+      cyclers.push({
+        start: function(){
+          if(running) return; running = true;
+          timer = setTimeout(step, HOLD + firstDelay);
+          firstDelay = 0;
+        },
+        stop: function(){ running = false; clearTimeout(timer); }
+      });
+    });
+    if(!cyclers.length) return;
+
+    var inView = false;
+    function sync(){
+      var go = inView && !document.hidden;
+      cyclers.forEach(function(c){ go ? c.start() : c.stop(); });
+    }
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(entries){
+        inView = entries[0].isIntersecting; sync();
+      }, {rootMargin:'120px 0px'}).observe(sec);
+    } else { inView = true; }
+    document.addEventListener('visibilitychange', sync);
+    sync();
+  }
+
+  window.initDressCode2 = initDressCode2;
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initDressCode2);
+  else initDressCode2();
+})();
+/* ── LLUVIA DE SOBRES (env-) ─────────────────────────────────
+   - La lluvia cae SIEMPRE detrás mientras #envZone está en pantalla
+     (IntersectionObserver); fuera de pantalla se limpia. Máx. 22 vivos.
+   - 3 profundidades: tamaño 14–38 px, opacidad y velocidad según capa.
+   - El sobre aterriza con rebote cuando la zona cruza el centro del
+     viewport; luego respira. Si tocan antes, aterriza rápido y abre.
+   - Sin dependencias: Web Animations API (no GSAP, no ScrollTrigger).
+   - Idempotente: llamar initEnvRain() varias veces no duplica nada. */
+(function(){
+  var MAX_ALIVE = 22, SPAWN_MS = 420;
+  var DEPTHS = [ /* lejos → cerca */
+    {min:14, max:19, op:.32, dur:[11000,13500], w:.40},
+    {min:20, max:27, op:.55, dur:[8200,10200],  w:.35},
+    {min:30, max:38, op:.82, dur:[6000,7600],   w:.25}
+  ];
+  var ITEM_SVG =
+    '<rect class="er-paper" x="1" y="1" width="32" height="22" rx="2.5"/>' +
+    '<path class="er-v" d="M1.6 22.4 L17 12.5 L32.4 22.4 Z"/>' +
+    '<path class="er-flap" d="M1 1 L17 13 L33 1"/>' +
+    '<circle class="er-seal" cx="17" cy="13" r="3.1"/>';
+
+  function rand(a,b){ return a + Math.random()*(b-a); }
+  function pickDepth(){
+    var r = Math.random(), acc = 0;
+    for(var i=0;i<DEPTHS.length;i++){ acc += DEPTHS[i].w; if(r <= acc) return DEPTHS[i]; }
+    return DEPTHS[DEPTHS.length-1];
+  }
+
+  function initEnvRain(){
+    var zone = document.getElementById('envZone'),
+        rain = document.getElementById('envRain'),
+        btn  = document.getElementById('envGift'),
+        body = document.getElementById('envGiftBody'),
+        hint = document.getElementById('envGiftHint'),
+        content = document.getElementById('envOpenContent');
+    if(!zone || !btn || zone.dataset.envInit) return;
+    zone.dataset.envInit = '1';
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var canAnimate = !reduce && typeof btn.animate === 'function';
+    var hasIO = 'IntersectionObserver' in window;
+
+    var landed = false, landing = false, openAfterLand = false, isOpen = false;
+    var alive = 0, spawnTimer = null, inView = false, closeTimer = null;
+
+    /* ---------- Lluvia ---------- */
+    function makeEnvelope(){
+      if(!rain || alive >= MAX_ALIVE) return;
+      var d = pickDepth(), w = rand(d.min, d.max), h = w*24/34;
+      var el = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      el.setAttribute('viewBox','0 0 34 24');
+      el.setAttribute('class','env-rain-item');
+      el.setAttribute('width', w.toFixed(1));
+      el.setAttribute('height', h.toFixed(1));
+      el.innerHTML = ITEM_SVG;
+      var W = zone.clientWidth, H = zone.offsetHeight + 60;
+      var x0 = rand(-10, W - w + 10), dx = rand(-60, 60);
+      var r0 = rand(-25, 25), r1 = r0 + rand(-160, 160);
+      var dur = rand(d.dur[0], d.dur[1]);
+      rain.appendChild(el);
+      alive++;
+      var anim = el.animate([
+        {transform:'translate3d('+x0+'px,-50px,0) rotate('+r0+'deg)', opacity:0},
+        {opacity:d.op, offset:.14},
+        {opacity:d.op, offset:.78},
+        {transform:'translate3d('+(x0+dx)+'px,'+H+'px,0) rotate('+r1+'deg)', opacity:0}
+      ], {duration:dur, easing:'linear', fill:'forwards'});
+      anim.onfinish = function(){ if(el.parentNode){ el.parentNode.removeChild(el); alive--; } };
+    }
+    function spawnLoop(){
+      spawnTimer = setTimeout(function(){
+        if(!inView || document.hidden){ spawnTimer = null; return; }
+        makeEnvelope(); spawnLoop();
+      }, SPAWN_MS + rand(-120, 120));
+    }
+    function startRain(){
+      if(!canAnimate || !rain || spawnTimer) return;
+      for(var i=0;i<6;i++) setTimeout(makeEnvelope, i*180);
+      spawnLoop();
+    }
+    function stopRain(){
+      clearTimeout(spawnTimer); spawnTimer = null;
+      if(rain){ while(rain.firstChild) rain.removeChild(rain.firstChild); }
+      alive = 0;
+    }
+
+    /* ---------- Aterrizaje ---------- */
+    function afterLand(){
+      landed = true; landing = false;
+      if(body && canAnimate) body.classList.add('landed');
+      if(hint){ hint.classList.remove('env-wait'); if(canAnimate) hint.classList.add('show'); }
+      if(openAfterLand){ openAfterLand = false; setOpen(true); }
+    }
+    function land(fast){
+      if(landed || landing) return;
+      if(!btn.classList.contains('env-armed')){ afterLand(); return; }
+      landing = true;
+      btn.classList.remove('env-armed');
+      var a = btn.animate([
+        {opacity:0, transform:'translateY(-150px) rotate(-12deg) scale(.82)'},
+        {opacity:1, transform:'translateY(0) rotate(0deg) scale(1)'}
+      ], {duration: fast ? 650 : 1150, easing:'cubic-bezier(.34,1.56,.64,1)'});
+      a.onfinish = afterLand;
+      a.oncancel = afterLand;
+    }
+
+    /* ---------- Abrir / cerrar ---------- */
+    function setOpen(open){
+      isOpen = open;
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Sobre: toca para cerrar' : 'Sobre: toca para abrir');
+      if(hint){
+        hint.textContent = open ? 'Toca para cerrar' : 'Toca para abrir';
+        hint.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      if(body) body.classList.toggle('landed', !open && canAnimate);
+      if(!content) return;
+      clearTimeout(closeTimer);
+      if(open){
+        content.hidden = false;
+        void content.offsetWidth;            /* fuerza el estado inicial antes del fundido */
+        content.classList.add('on');
+      } else {
+        content.classList.remove('on');
+        closeTimer = setTimeout(function(){ if(!isOpen) content.hidden = true; }, reduce ? 0 : 450);
+      }
+      if(window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function'){
+        setTimeout(function(){ window.ScrollTrigger.refresh(); }, 60);
+      }
+    }
+    function onTap(e){
+      if(e) e.preventDefault();
+      if(!landed){ openAfterLand = true; land(true); return; }
+      setOpen(!isOpen);
+    }
+    btn.addEventListener('click', onTap);
+    if(hint) hint.addEventListener('click', onTap);
+
+    /* ---------- Observadores ---------- */
+    if(canAnimate && hasIO){
+      /* Armar: el sobre se oculta arriba SOLO si la zona aún no se ve;
+         así nunca queda invisible si ya está en pantalla. */
+      var r = zone.getBoundingClientRect();
+      var alreadyVisible = r.top < window.innerHeight && r.bottom > 0;
+      if(!alreadyVisible){
+        btn.classList.add('env-armed');
+        if(hint) hint.classList.add('env-wait');
+      }
+
+      var fallbackTimer = null;
+      /* Lluvia: mientras la zona esté (casi) en pantalla */
+      new IntersectionObserver(function(entries){
+        inView = entries[0].isIntersecting;
+        if(inView){
+          startRain();
+          /* Respaldo: si nunca cruza el centro, aterriza igual */
+          if(!landed && !fallbackTimer) fallbackTimer = setTimeout(function(){ land(false); }, 1800);
+        } else {
+          stopRain();
+          clearTimeout(fallbackTimer); fallbackTimer = null;
+        }
+      }, {rootMargin:'80px 0px'}).observe(zone);
+
+      /* Aterrizaje: cuando el escenario cruza la franja central */
+      var stage = btn.parentNode || zone;
+      var landIO = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){ land(false); landIO.disconnect(); }
+      }, {rootMargin:'-42% 0px -42% 0px'});
+      landIO.observe(stage);
+
+      document.addEventListener('visibilitychange', function(){
+        if(document.hidden){ clearTimeout(spawnTimer); spawnTimer = null; }
+        else if(inView){ startRain(); }
+      });
+      if(alreadyVisible){ inView = true; startRain(); afterLand(); }
+    } else {
+      afterLand(); /* sin animación: sobre visible y listo para tocar */
+    }
+  }
+
+  window.initEnvRain = initEnvRain;
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initEnvRain);
+  else initEnvRain();
+})();
+/* ═══════════ GALERÍA · CARRUSEL 3D (Marian & Raúl) ═══════════
+   Dependencia: GSAP 3.12.5 core (usa gsap.ticker y gsap.quickSetter).
+   Llamar initGallery3D() una vez que exista #g3d-ring y esté cargado GSAP
+   (p. ej. dentro de initMain). Es idempotente: llamarla dos veces no duplica nada. */
+function initGallery3D() {
+  if (initGallery3D._done) return;
+  var ring = document.getElementById('g3d-ring');
+  var scene = document.getElementById('g3d-scene');
+  if (!ring || !scene || !window.gsap) return;
+  initGallery3D._done = true;
+
+  var cards = Array.prototype.slice.call(ring.querySelectorAll('.g3d-card'));
+  var n = cards.length;
+  if (!n) return;
+
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var AUTO = RM ? 0 : 0.12;      /* grados por frame (~60fps): una vuelta ≈ 50 s */
+  var DRAG_K = 0.38;             /* grados por píxel arrastrado */
+  var MAX_V = 9;
+  var step = 360 / n;
+  var rot = 0, vel = AUTO, radius = 0;
+  var dragging = false, moved = false, startX = 0, startY = 0, lastX = 0, downCard = null, pid = null;
+  var running = false, inView = true, lbOpen = false;
+
+  var setRot = gsap.quickSetter(ring, 'rotationY', 'deg');
+
+  /* ── posiciones de las tarjetas (radio según el ancho real) ── */
+  function layout() {
+    var w = cards[0].offsetWidth || 200;
+    radius = Math.round((w / 2) / Math.tan(Math.PI / n) * 1.25);
+    cards.forEach(function (c, i) {
+      c.style.transform = 'rotateY(' + (step * i) + 'deg) translateZ(' + radius + 'px)';
+    });
+  }
+
+  /* ── aplica giro + profundidad (solo transform/opacity) ── */
+  function apply() {
+    setRot(rot);
+    for (var i = 0; i < n; i++) {
+      var a = (step * i + rot) * Math.PI / 180;
+      cards[i].style.opacity = (0.42 + 0.58 * (Math.cos(a) + 1) / 2).toFixed(3);
+    }
+  }
+
+  /* ── loop: giro automático + inercia que regresa sola al giro suave ── */
+  function tick(time, deltaTime) {
+    if (dragging) return;
+    var dr = Math.min((deltaTime || 16.667) / 16.667, 3);
+    if (RM) { vel = 0; }
+    else { vel += (AUTO - vel) * (1 - Math.pow(0.965, dr)); }
+    rot += vel * dr;
+    apply();
+  }
+  function start() { if (!running && inView && !lbOpen) { running = true; gsap.ticker.add(tick); } }
+  function stop() { if (running) { running = false; gsap.ticker.remove(tick); } }
+
+  /* ── arrastre (pointer events; touch-action:pan-y deja el scroll vertical) ── */
+  ring.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    dragging = true; moved = false; pid = e.pointerId;
+    startX = lastX = e.clientX; startY = e.clientY;
+    downCard = e.target.closest ? e.target.closest('.g3d-card') : null;
+    vel = 0;
+    ring.classList.add('is-drag');
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!dragging || e.pointerId !== pid) return;
+    var dx = e.clientX - lastX;
+    if (!moved && (Math.abs(e.clientX - startX) > 6 || Math.abs(e.clientY - startY) > 6)) {
+      moved = true;
+      try { ring.setPointerCapture(pid); } catch (err) {}
+    }
+    lastX = e.clientX;
+    if (!moved) return;
+    rot += dx * DRAG_K;
+    var v = dx * DRAG_K;
+    vel = Math.max(-MAX_V, Math.min(MAX_V, vel * 0.5 + v * 0.5));
+    apply();
+  }, { passive: true });
+  function release(e, cancelled) {
+    if (!dragging || (e && e.pointerId !== pid)) return;
+    dragging = false;
+    ring.classList.remove('is-drag');
+    try { ring.releasePointerCapture(pid); } catch (err) {}
+    if (RM) vel = 0;
+    if (!moved && !cancelled && downCard) openLB(cards.indexOf(downCard));
+    downCard = null; pid = null;
+  }
+  window.addEventListener('pointerup', function (e) { release(e, false); });
+  window.addEventListener('pointercancel', function (e) { release(e, true); });
+
+  /* teclado: Enter/Espacio abre, flechas giran */
+  cards.forEach(function (c, i) {
+    c.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLB(i); }
+      else if (e.key === 'ArrowLeft') { rot += step; apply(); }
+      else if (e.key === 'ArrowRight') { rot -= step; apply(); }
+    });
+  });
+
+  /* ── lightbox ── */
+  var lb = document.getElementById('g3d-lb');
+  var lbImg = lb ? lb.querySelector('.g3d-lb-img') : null;
+  var lbCount = lb ? lb.querySelector('.g3d-lb-count') : null;
+  var lbIdx = 0, lastFocus = null, prevOverflow = '', closeT = null;
+  if (lb && lb.parentNode !== document.body) document.body.appendChild(lb);
+
+  function showLB(i) {
+    lbIdx = (i + n) % n;
+    var img = cards[lbIdx].querySelector('.g3d-frame img');
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbCount.textContent = (lbIdx + 1) + ' / ' + n;
+  }
+  function openLB(i) {
+    if (!lb || i < 0) return;
+    clearTimeout(closeT);
+    lastFocus = document.activeElement;
+    showLB(i);
+    lbOpen = true; stop();
+    prevOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = 'hidden';
+    lb.hidden = false;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { lb.classList.add('is-open'); }); });
+    lb.querySelector('.g3d-lb-close').focus({ preventScroll: true });
+  }
+  function closeLB() {
+    if (!lbOpen) return;
+    lbOpen = false;
+    lb.classList.remove('is-open');
+    document.documentElement.style.overflow = prevOverflow;
+    closeT = setTimeout(function () { lb.hidden = true; }, RM ? 0 : 360);
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    start();
+  }
+  if (lb) {
+    lb.querySelector('.g3d-lb-close').addEventListener('click', closeLB);
+    lb.querySelector('.g3d-lb-prev').addEventListener('click', function () { showLB(lbIdx - 1); });
+    lb.querySelector('.g3d-lb-next').addEventListener('click', function () { showLB(lbIdx + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('g3d-lb-fig')) closeLB(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lbOpen) return;
+      if (e.key === 'Escape') closeLB();
+      else if (e.key === 'ArrowLeft') showLB(lbIdx - 1);
+      else if (e.key === 'ArrowRight') showLB(lbIdx + 1);
+    });
+    /* swipe dentro del lightbox */
+    var sx = null;
+    lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 45) showLB(lbIdx + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+  }
+
+  /* ── pausa fuera de pantalla ── */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+      if (inView) start(); else stop();
+    }, { rootMargin: '120px 0px' }).observe(scene);
+  }
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+
+  var rt = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(rt);
+    rt = setTimeout(function () { layout(); apply(); }, 150);
+  });
+
+  layout();
+  apply();
+  start();
+}
+/* ═══════════ RSVP · Panel de Invitados, X pases (Marian & Raúl) ═══════════
+   Estándar: references/rsvp-panel-pases.md (contrato url_boda + estado).
+   Sin dependencias (confeti con Web Animations API). Llamar initRSVP2() al cargar la página.
+   Idempotente: una segunda llamada no hace nada. */
+function initRSVP2() {
+  if (initRSVP2._done) return;
+  var section = document.getElementById('rsvp');
+  var btn = document.getElementById('rv-confirm-btn');
+  if (!section || !btn) return;
+  initRSVP2._done = true;
+
+  var API = 'https://panel-invitados.vercel.app/api/confirmar';
+  var URL_BODA = 'https://boda-marian-nevarez-y-raul-cruz.vercel.app';
+  /* Debe coincidir con el texto visible: "Confirma antes del 27 de febrero de 2027" */
+  var DEADLINE = new Date(2027, 1, 27, 23, 59, 59, 999);   /* sábado 27 feb 2027, 23:59:59 hora local */
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var qs = new URLSearchParams(window.location.search);
+  var para = (qs.get('para') || '').trim();
+  var pases = clampPases(qs.get('pases'), 1);
+  var frozen = Date.now() > DEADLINE.getTime();
+  var estado = null, savedNames = [];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var hi = $('rv-hi'), note = $('rv-pases-note');
+  var disp = $('rv-pases-display'), num = $('rv-pases-num');
+  var fields = $('rv-fields'), btnText = $('rv-btn-text');
+  var yes = $('rv-btn-yes'), no = $('rv-btn-no'), fb = $('rv-feedback');
+  var bandejaEl = $('rv-bandeja'), graciasEl = $('rv-gracias');
+  var gTitleEl = $('rv-gracias-title'), gSubEl = $('rv-gracias-sub'), editarBtn = $('rv-editar-btn');
+
+  function clampPases(v, fallback) {
+    var p = parseInt(v, 10);
+    return (isNaN(p) || p < 1) ? fallback : Math.min(20, p);
+  }
+  function paseText() {
+    num.textContent = pases;
+    note.textContent = pases === 1 ? 'Hemos reservado un lugar para ti.' : 'Hemos reservado ' + pases + ' lugares en tu honor.';
+  }
+  function setFeedback(t, c) { fb.textContent = t; fb.className = 'rv-feedback' + (c ? ' is-' + c : ''); }
+
+  if (para) { hi.textContent = para; hi.hidden = false; }
+  disp.hidden = false;
+  paseText();
+
+  /* conserva lo escrito aunque se reconstruyan los campos */
+  function captureNames() {
+    var inputs = fields.querySelectorAll('input');
+    for (var i = 0; i < inputs.length; i++) savedNames[i] = inputs[i].value;
+  }
+  function buildFields() {
+    fields.innerHTML = '';
+    for (var i = 0; i < pases; i++) {
+      var inp = document.createElement('input');
+      inp.type = 'text';
+      inp.className = 'rv-input';
+      inp.placeholder = 'Nombre completo del invitado ' + (i + 1);
+      inp.setAttribute('aria-label', 'Nombre completo del invitado ' + (i + 1));
+      inp.autocomplete = i === 0 ? 'name' : 'off';
+      inp.maxLength = 80;
+      inp.disabled = frozen;
+      if (savedNames[i]) inp.value = savedNames[i];
+      (function (idx) { inp.addEventListener('input', function () { savedNames[idx] = this.value; }); })(i);
+      fields.appendChild(inp);
+    }
+  }
+  function selectRsvp(v) {
+    estado = v;
+    yes.classList.toggle('is-on', v === 'confirmado');
+    no.classList.toggle('is-on', v === 'declino');
+    yes.setAttribute('aria-pressed', v === 'confirmado' ? 'true' : 'false');
+    no.setAttribute('aria-pressed', v === 'declino' ? 'true' : 'false');
+    if (v === 'confirmado') { buildFields(); fields.hidden = false; }
+    else { fields.innerHTML = ''; fields.hidden = true; }   /* al declinar se ocultan y se limpian */
+  }
+  yes.addEventListener('click', function () { if (!frozen) { setFeedback('', ''); selectRsvp('confirmado'); } });
+  no.addEventListener('click', function () { if (!frozen) { captureNames(); setFeedback('', ''); selectRsvp('declino'); } });
+
+  /* ── bandeja ⇄ gracias ── */
+  function mostrarGracias(est, nombres) {
+    if (est === 'confirmado') {
+      gTitleEl.textContent = '¡Gracias por confirmar!';
+      gSubEl.textContent = nombres.length === 1
+        ? 'Te esperamos, ' + nombres[0] + '.'
+        : 'Confirmamos ' + nombres.length + ' lugares: ' + nombres.join(', ') + '.';
+    } else {
+      gTitleEl.textContent = 'Gracias por avisarnos';
+      gSubEl.textContent = 'Lamentamos que no puedas acompañarnos. Te vamos a extrañar.';
+    }
+    bandejaEl.hidden = true;
+    graciasEl.hidden = false;
+  }
+  function abrirBandeja() {
+    graciasEl.hidden = true;
+    bandejaEl.hidden = false;
+    setFeedback('', '');
+    if (estado) selectRsvp(estado);
+  }
+  editarBtn.addEventListener('click', function () { if (!frozen) abrirBandeja(); });
+
+  /* ── confeti en la paleta de la boda ── */
+  function confetti() {
+    if (RM || !document.body.animate) return;
+    var cols = ['#5f94b4', '#b1cad3', '#c9ab72', '#F7E7CE', '#2c5068'];
+    var H = window.innerHeight;
+    for (var i = 0; i < 70; i++) {
+      var c = document.createElement('i');
+      c.className = 'rv-confetti';
+      c.setAttribute('aria-hidden', 'true');
+      c.style.left = (Math.random() * 100) + 'vw';
+      c.style.background = cols[i % cols.length];
+      document.body.appendChild(c);
+      var a = c.animate([
+        { transform: 'translate3d(0,0,0) rotate(0deg)', opacity: 1 },
+        { transform: 'translate3d(' + (Math.random() * 120 - 60) + 'px,' + (H + 40) + 'px,0) rotate(' + (Math.random() * 720) + 'deg)', opacity: 0.85 }
+      ], { duration: 2200 + Math.random() * 1600, delay: Math.random() * 400, easing: 'cubic-bezier(.2,.6,.4,1)', fill: 'backwards' });
+      a.onfinish = (function (el) { return function () { el.remove(); }; })(c);
+    }
+  }
+
+  /* ── cierre por fecha límite ── */
+  if (frozen) {
+    yes.disabled = no.disabled = btn.disabled = editarBtn.disabled = true;
+    btnText.textContent = 'Confirmaciones cerradas';
+    setFeedback('La fecha límite para confirmar ya pasó.', 'err');
+  }
+
+  /* ── precarga: pases autoritativos + respuesta guardada (arranca CERRADA) ── */
+  if (para) {
+    fetch(API + '?nombre=' + encodeURIComponent(para) + '&url_boda=' + encodeURIComponent(URL_BODA))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var inv = d && d.invitado;
+        if (!inv) return;
+        if (inv.pases) {
+          captureNames();
+          pases = clampPases(inv.pases, pases);
+          paseText();
+          if (estado === 'confirmado') buildFields();
+        }
+        if (inv.estado === 'confirmado' || inv.estado === 'declino') {
+          savedNames = (inv.nombres_confirmados || []).slice();
+          selectRsvp(inv.estado);
+          btnText.textContent = frozen ? 'Confirmaciones cerradas' : 'Actualizar respuesta';
+          mostrarGracias(inv.estado, savedNames);
+        }
+      })
+      .catch(function () {});
+  }
+
+  /* ── envío ── */
+  btn.addEventListener('click', function () {
+    if (frozen) return;
+    if (!para) { setFeedback('Abre tu enlace personal de invitación para confirmar.', 'err'); return; }
+    if (!estado) { setFeedback('Elige si asistirás o no.', 'err'); return; }
+    var nombres = [];
+    if (estado === 'confirmado') {
+      fields.querySelectorAll('input').forEach(function (i) { var v = i.value.trim(); if (v) nombres.push(v); });
+      if (!nombres.length) { setFeedback('Escribe al menos un nombre.', 'err'); return; }
+    }
+    btn.disabled = true;
+    setFeedback('Enviando…', '');
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nombre: para,
+        url_boda: URL_BODA,
+        estado: estado,
+        pases_confirmados: estado === 'confirmado' ? nombres.length : 0,
+        nombres_confirmados: nombres
+      })
+    })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, status: r.status, d: d }; }); })
+      .then(function (res) {
+        btn.disabled = false;
+        if (res.status === 410) { setFeedback('Esta invitación ya no está activa. Comunícate con los novios.', 'err'); return; }
+        if (!res.ok || (res.d && res.d.ok === false)) { setFeedback('No pudimos registrar tu respuesta. Intenta de nuevo.', 'err'); return; }
+        savedNames = nombres.slice();
+        btnText.textContent = 'Actualizar respuesta';
+        setFeedback('', '');
+        mostrarGracias(estado, nombres);
+        if (estado === 'confirmado') confetti();
+      })
+      .catch(function () { btn.disabled = false; setFeedback('Sin conexión. Intenta de nuevo.', 'err'); });
+  });
+}
+</script>
+<script>
+/* ELYSIUM AUDIO v2 — el invitado entra y escucha la cancion. */
+(function(){
+  if(window.__elyAudio2) return; window.__elyAudio2=1;
+  var FALLBACK='https://boda-isaac-y-claudia.vercel.app/cancion.mp3';
+  var forced=false, gestured=false;
+  function A(){ return document.querySelector('audio'); }
+  function toFallback(a){
+    if(!a || a.getAttribute('data-ely-fb')) return;
+    a.setAttribute('data-ely-fb','1');
+    try{ a.src=FALLBACK; a.load(); if(gestured){ var p=a.play(); if(p&&p.catch) p.catch(function(){}); } }catch(e){}
+  }
+  function hook(a){
+    if(!a || a.__elyHook) return; a.__elyHook=1;
+    a.addEventListener('error',function(){ toFallback(a); });
+    var ss=a.querySelectorAll('source');
+    for(var i=0;i<ss.length;i++){ ss[i].addEventListener('error',function(){ toFallback(a); }); }
+    if(a.networkState===3 || (!ss.length && !a.getAttribute('src'))) toFallback(a);
+  }
+  function kick(a){
+    try{ a.muted=false; if(a.volume<0.2) a.volume=0.6; }catch(e){}
+    if(a.paused && a.currentTime===0 && a.readyState===0){ try{ a.preload='auto'; a.load(); }catch(e){} }
+    var p; try{ p=a.play(); }catch(e){ return; }
+    if(p && p.catch) p.catch(function(){});
+  }
+  function onGesture(){
+    var a=A(); if(!a) return;
+    hook(a); gestured=true;
+    if(forced) return;
+    if(a.paused) kick(a);
+    setTimeout(function(){ var b=A(); if(!forced && b && b.paused) kick(b); forced=true; },150);
+  }
+  hook(A());
+  ['pointerdown','touchend','click','keydown'].forEach(function(ev){
+    document.addEventListener(ev,onGesture,{capture:true,passive:true});
+  });
+})();
+</script>
+</body>
+</html>
