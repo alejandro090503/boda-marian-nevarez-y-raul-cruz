@@ -783,6 +783,88 @@ img{max-width:100%}
 @keyframes rvBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 @media (prefers-reduced-motion:reduce){#rv-confirm-btn{animation:none}}
 
+
+/* ══ PAQUETE 2: hero vivo, tintas, vinilo, vestimenta ══ */
+.hero-bg{inset:-14% 0}
+.hero-drift{animation:heroDrift 20s ease-in-out infinite alternate}
+@keyframes heroDrift{0%{transform:translate3d(0,0,0) scale(1.04)}100%{transform:translate3d(-4%,-3%,0) scale(1.16)}}
+.hero-glows{position:absolute;inset:0;z-index:1;mix-blend-mode:screen;pointer-events:none;overflow:hidden}
+.hero-glows i{position:absolute;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(247,231,206,.35) 0%,rgba(247,231,206,.12) 40%,transparent 68%);opacity:.25;animation:glowFloat 28s ease-in-out infinite alternate,glowBreath 9s ease-in-out infinite alternate}
+@keyframes glowFloat{to{transform:translate3d(var(--dx),var(--dy),0)}}
+@keyframes glowBreath{from{opacity:.25}to{opacity:.55}}
+.hero-lens{position:absolute;inset:0;z-index:1;overflow:hidden;mix-blend-mode:soft-light;pointer-events:none}
+.hero-lens i{position:absolute;top:-10%;bottom:-10%;left:0;width:38%;background:linear-gradient(105deg,transparent,rgba(255,244,220,1) 50%,transparent);opacity:0;transform:translateX(-120%);animation:lens 12s ease-in-out infinite}
+@keyframes lens{0%{transform:translateX(-120%);opacity:0}6%{opacity:.18}34%{opacity:.18}40%,100%{transform:translateX(330%);opacity:0}}
+.hero-dust{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.hero-dust span{position:absolute;bottom:-10px;border-radius:50%;background:#F7E7CE;box-shadow:0 0 6px rgba(247,231,206,.9);opacity:.3;animation:dustRise 20s linear infinite,dustTw 4s ease-in-out infinite alternate}
+@keyframes dustRise{to{transform:translate3d(var(--sx),-95svh,0)}}
+@keyframes dustTw{from{opacity:.3}to{opacity:.7}}
+.hero-vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 90% 80% at 50% 45%,transparent 55%,rgba(10,20,28,.45) 100%)}
+.ink-bg i{inset:-10%;animation:inkDrift 22s ease-in-out infinite alternate}
+@keyframes inkDrift{0%{transform:translate3d(-4%,-3%,0) scale(1.02) rotate(-1.2deg)}50%{transform:translate3d(2%,4%,0) scale(1.1) rotate(.4deg)}100%{transform:translate3d(4%,-2%,0) scale(1.16) rotate(1.2deg)}}
+@keyframes inkDriftB{0%{transform:translate3d(4%,3%,0) scale(1.16) rotate(1.2deg)}100%{transform:translate3d(-4%,-3%,0) scale(1.02) rotate(-1.2deg)}}
+.ink-top i{animation-delay:-4s}
+.ink-oval i{inset:-4% -2%;animation-delay:-8s}
+.ink-corner i{animation-name:inkDriftB;animation-delay:-9s}
+.ink-hero i{animation-delay:-14s}
+.ink-footer i{animation-name:inkDriftB;animation-delay:-6s}
+
+/* vinilo */
+.vinyl-btn{position:fixed;bottom:max(18px,env(safe-area-inset-bottom));left:14px;z-index:950;width:72px;height:72px;border-radius:50%;padding:0;border:none;cursor:pointer;background:transparent;opacity:0;transform:scale(.6);pointer-events:none;transition:opacity .6s ease,transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 8px 22px rgba(10,20,28,.45),0 0 0 2px rgba(201,171,114,.6);touch-action:manipulation}
+.vinyl-btn.is-ready{opacity:1;transform:scale(1);pointer-events:auto}
+.vinyl-spin{width:100%;height:100%;border-radius:50%;position:relative}
+.vinyl-btn.is-playing .vinyl-spin{animation:vinylSpin 1.8s linear infinite}
+@keyframes vinylSpin{to{transform:rotate(360deg)}}
+.vinyl-disc{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;box-shadow:inset 0 0 8px rgba(0,0,0,.4);
+ background:repeating-radial-gradient(circle,transparent 20%,rgba(255,255,255,.055) 21%,transparent 22%,transparent 26%,rgba(255,255,255,.04) 27%,transparent 28%,transparent 32%,rgba(255,255,255,.055) 33%,transparent 34%,transparent 38%,rgba(255,255,255,.04) 39%,transparent 40%,transparent 46%,rgba(255,255,255,.055) 47%,transparent 48%,transparent 56%,rgba(255,255,255,.04) 57%,transparent 58%,transparent 68%,rgba(255,255,255,.055) 69%,transparent 70%,transparent 82%,rgba(255,255,255,.04) 83%,transparent 84%),radial-gradient(circle,#14232d 0%,#1d3341 60%,#14232d 100%)}
+.vinyl-disc::after{content:"";position:absolute;left:50%;top:50%;width:38%;height:38%;transform:translate(-50%,-50%);border-radius:50%;z-index:1;background:radial-gradient(circle at 34% 28%,#FFF3C4 0%,#E6D3A8 30%,#c9ab72 62%,#8a6d3b 100%);box-shadow:0 0 0 1.5px rgba(30,24,8,.5),inset 0 0 6px rgba(255,255,255,.35)}
+.vinyl-sheen{position:absolute;inset:0;border-radius:50%;z-index:2;pointer-events:none;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.09) 42%,rgba(255,255,255,.16) 48%,rgba(255,255,255,.09) 54%,transparent 66%)}
+.vinyl-label-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;width:34px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:14px;line-height:1;color:#18303f;pointer-events:none}
+.vinyl-label-text small{display:block;font-family:'Cormorant Garamond',serif;font-size:7px;letter-spacing:.14em;margin-top:2px;opacity:.85}
+.vinyl-icons{position:absolute;bottom:-3px;right:-3px;width:22px;height:22px;z-index:4;background:linear-gradient(135deg,#E6D3A8,#c9ab72);border-radius:50%;padding:4px;box-shadow:0 2px 6px rgba(0,0,0,.4);pointer-events:none}
+.vinyl-icons svg{width:100%;height:100%;display:block}
+.vinyl-icon-pause{display:none}
+.vinyl-btn.is-playing .vinyl-icon-play{display:none}
+.vinyl-btn.is-playing .vinyl-icon-pause{display:block}
+.vinyl-btn::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--gold);opacity:.3;animation:vinylPulse 3s ease-in-out infinite}
+.vinyl-btn.is-playing::after{animation-duration:1.6s}
+@keyframes vinylPulse{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.12);opacity:.05}}
+.vinyl-tonearm{position:absolute;top:-9px;right:-10px;width:34px;height:48px;transform-origin:top right;transform:rotate(-28deg);transition:transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:5}
+.vinyl-btn.is-playing .vinyl-tonearm{transform:rotate(-12deg)}
+.vinyl-tonearm-line{position:absolute;top:2px;right:6px;width:3px;height:40px;background:linear-gradient(to bottom,#8a6d3b,#E6D3A8 40%,#8a6d3b);border-radius:1px;transform:rotate(-5deg);transform-origin:top center}
+.vinyl-tonearm-head{position:absolute;bottom:0;right:3px;width:7px;height:9px;background:#c9ab72;border-radius:0 0 2px 2px}
+.vinyl-tonearm-pivot{position:absolute;top:0;right:3px;width:10px;height:10px;background:radial-gradient(circle,#F7E7CE,#8a6d3b);border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+
+/* vestimenta */
+.dc3{text-align:center}
+.dc3-type{font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:22px}
+.dc3-fig{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:340px;margin:0 auto 30px;align-items:end}
+.dc3-f{margin:0;transform-origin:50% 100%;animation:dc3Sway 6.5s ease-in-out infinite}
+.dc3-f2{animation-delay:-3.2s}
+.dc3-f img{display:block;width:auto;max-width:100%;height:230px;margin:0 auto;object-fit:contain}
+.dc3-f figcaption{margin-top:10px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--accent-deep)}
+@keyframes dc3Sway{0%,100%{transform:translate3d(0,0,0) rotate(-1.2deg)}50%{transform:translate3d(0,-8px,0) rotate(1.2deg)}}
+.dc3-sub{font-family:'Lato',sans-serif;font-weight:700;font-size:14px;letter-spacing:3.5px;text-transform:uppercase;color:var(--accent-deep);margin:8px 0 18px}
+.dc3-grid{display:grid;gap:18px 14px;justify-content:center;margin:0 auto 28px;max-width:340px}
+.dc3-g3{grid-template-columns:repeat(3,1fr)}
+.dc3-g2{grid-template-columns:repeat(2,minmax(0,110px))}
+.dc3-c{display:flex;flex-direction:column;align-items:center;gap:10px}
+.dc3-c b{font-family:'Lato',sans-serif;font-weight:700;font-size:14px;color:var(--ink-text);line-height:1.3}
+.ball{position:relative;width:58px;height:58px;border-radius:50%;display:block}
+.ball::before{content:'';position:absolute;inset:-12px;border-radius:50%;background:radial-gradient(circle,rgba(201,171,114,.55),transparent 68%);opacity:.3;animation:ballGlow 3.4s ease-in-out infinite alternate;z-index:-1}
+.ball .disc{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:2px solid #c9ab72;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.ball .disc i{position:absolute;top:-10%;bottom:-10%;left:0;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.7),transparent);transform:translateX(-160%) skewX(-12deg);animation:ballSheen 5s ease-in-out infinite}
+@keyframes ballGlow{from{opacity:.25;transform:scale(.92)}to{opacity:.7;transform:scale(1.08)}}
+@keyframes ballSheen{0%{transform:translateX(-160%) skewX(-12deg)}45%,100%{transform:translateX(320%) skewX(-12deg)}}
+.dc3-note{font-family:'Lato',sans-serif;font-size:16px;font-weight:500;color:var(--ink-text);max-width:300px;margin:0 auto 30px;line-height:1.55}
+.dc3-adults{max-width:320px;margin:0 auto;padding:22px 20px;border:1px solid var(--hair);border-radius:16px;background:rgba(251,248,243,.88);box-shadow:0 8px 24px rgba(24,48,63,.1)}
+.dc3-ad-t{display:block;font-family:'Lato',sans-serif;font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:8px}
+.dc3-adults p{font-size:18px;line-height:1.5;color:var(--ink-text)}
+@media (prefers-reduced-motion:reduce){
+ .hero-glows i,.hero-lens i,.hero-dust span,.ink-bg i,.vinyl-btn::after,.dc3-f,.ball::before,.ball .disc i{animation:none!important}
+ .vinyl-btn.is-playing .vinyl-spin{animation:none}.vinyl-tonearm{transition:none}
+}
+
 /* ── REDUCED MOTION ────────────────────────────────────── */
 @media (prefers-reduced-motion:reduce){
   .foil-text{animation:none;background-position:50% 0}
@@ -819,9 +901,13 @@ img{max-width:100%}
 <button class="fab fab-menu" id="fabMenu" type="button" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
 </button>
-<button class="fab fab-music" id="fabMusic" type="button" aria-label="Pausar o reproducir música">
-  <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-  <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+<button class="vinyl-btn" id="fabMusic" type="button" aria-label="Pausar o reproducir música">
+  <div class="vinyl-tonearm"><div class="vinyl-tonearm-pivot"></div><div class="vinyl-tonearm-line"></div><div class="vinyl-tonearm-head"></div></div>
+  <div class="vinyl-spin"><div class="vinyl-disc"><div class="vinyl-sheen"></div><div class="vinyl-label-text">R&amp;M<small>2027</small></div></div></div>
+  <div class="vinyl-icons">
+    <svg class="vinyl-icon-play" viewBox="0 0 24 24" fill="#18303f" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="vinyl-icon-pause" viewBox="0 0 24 24" fill="#18303f" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </div>
 </button>
 
 <nav id="menu" aria-hidden="true">
@@ -848,7 +934,7 @@ img{max-width:100%}
 <!-- ═══════════ 1. HERO ═══════════ -->
 <section id="hero">
   <div class="hero-bg" id="heroBg"><i class="hero-drift"></i></div>
-  <div class="hero-sheen" aria-hidden="true"><i></i></div>
+  <div class="hero-glows" aria-hidden="true"><i style="left:-10%;top:8%;--dx:30%;--dy:12%;animation-duration:26s,9s"></i><i style="right:-15%;top:30%;--dx:-26%;--dy:-10%;animation-duration:30s,11s;animation-delay:-8s,-3s"></i><i style="left:15%;bottom:12%;--dx:22%;--dy:-16%;animation-duration:24s,8s;animation-delay:-14s,-5s"></i><i style="right:5%;top:-8%;--dx:-20%;--dy:20%;animation-duration:32s,10s;animation-delay:-4s,-7s"></i></div><div class="hero-lens" aria-hidden="true"><i></i></div><div class="hero-dust" aria-hidden="true"><span style="left:45%;--sx:-9px;width:4px;height:2px;animation-duration:15s,3s;animation-delay:-11s,-4s"></span><span style="left:11%;--sx:14px;width:3px;height:2px;animation-duration:15s,6s;animation-delay:-13s,-0s"></span><span style="left:34%;--sx:-13px;width:4px;height:2px;animation-duration:23s,3s;animation-delay:-7s,-5s"></span><span style="left:84%;--sx:-15px;width:4px;height:2px;animation-duration:17s,3s;animation-delay:-17s,-1s"></span><span style="left:41%;--sx:8px;width:3px;height:2px;animation-duration:23s,5s;animation-delay:-17s,-5s"></span><span style="left:27%;--sx:-12px;width:3px;height:3px;animation-duration:15s,3s;animation-delay:-18s,-0s"></span><span style="left:83%;--sx:-5px;width:4px;height:4px;animation-duration:26s,5s;animation-delay:-14s,-4s"></span><span style="left:62%;--sx:5px;width:3px;height:3px;animation-duration:26s,4s;animation-delay:-22s,-1s"></span><span style="left:14%;--sx:18px;width:3px;height:4px;animation-duration:19s,6s;animation-delay:-9s,-4s"></span><span style="left:13%;--sx:-11px;width:4px;height:3px;animation-duration:26s,5s;animation-delay:-4s,-3s"></span><span style="left:57%;--sx:-16px;width:2px;height:3px;animation-duration:19s,5s;animation-delay:-19s,-3s"></span><span style="left:78%;--sx:11px;width:2px;height:2px;animation-duration:18s,6s;animation-delay:-22s,-5s"></span><span style="left:12%;--sx:-15px;width:3px;height:4px;animation-duration:18s,6s;animation-delay:-21s,-2s"></span><span style="left:6%;--sx:11px;width:3px;height:3px;animation-duration:23s,3s;animation-delay:-15s,-0s"></span><span style="left:31%;--sx:0px;width:3px;height:3px;animation-duration:20s,6s;animation-delay:-15s,-0s"></span><span style="left:25%;--sx:10px;width:4px;height:3px;animation-duration:16s,6s;animation-delay:-17s,-2s"></span></div><div class="hero-vig" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-cnt" id="hCnt">
     <p class="hero-eyebrow">Nuestra boda</p>
@@ -961,91 +1047,22 @@ img{max-width:100%}
   </div>
 </section>
 
-<section id="dresscode" class="dc2" aria-labelledby="dc2-title">
+<section id="dresscode" class="dc3" aria-labelledby="dc3-title">
   <div class="ink-bg ink-top flip" aria-hidden="true"><i></i></div>
-  <div class="dc2-inner">
-
-    <h2 id="dc2-title" class="dc2-title foil-text">Código de vestimenta</h2>
-    <p class="dc2-type">Semiformal</p>
-
-    <div class="dc2-figures">
-      <figure class="dc2-fig">
-        <img class="dc2-img" src="caballero.png" width="300" height="610" decoding="async"
-             alt="Dibujo de un caballero vestido de traje">
-        <figcaption class="dc2-fig-label">Caballeros</figcaption>
-      </figure>
-      <figure class="dc2-fig">
-        <img class="dc2-img dc2-img--b" src="dama.png" width="248" height="604" decoding="async"
-             alt="Dibujo de una dama con vestido largo">
-        <figcaption class="dc2-fig-label">Damas</figcaption>
-      </figure>
-    </div>
-
-    <p class="dc2-msg">Reservamos el blanco para la novia.</p>
-
-    <div class="dc2-palettes">
-
-      <!-- SUGERIDOS -->
-      <div class="dc2-group" data-dc2-cycle>
-        <p class="dc2-group-label">Sugeridos</p>
-        <div class="dc2-cycle" aria-hidden="true">
-          <div class="dc2-orb-wrap">
-            <div class="dc2-orb">
-              <span class="dc2-layer is-on" style="--c:#87b5c4"></span>
-              <span class="dc2-layer" style="--c:#97abbe"></span>
-              <span class="dc2-layer" style="--c:#776012"></span>
-              <span class="dc2-gloss"></span>
-              <span class="dc2-sweep"></span>
-            </div>
-          </div>
-          <div class="dc2-names">
-            <span class="dc2-name is-on">Azul cielo</span>
-            <span class="dc2-name">Azul grisáceo</span>
-            <span class="dc2-name">Oro viejo</span>
-          </div>
-        </div>
-        <ul class="dc2-list">
-          <li><span class="dc2-dot" style="--c:#87b5c4"></span>Azul cielo</li>
-          <li><span class="dc2-dot" style="--c:#97abbe"></span>Azul grisáceo</li>
-          <li><span class="dc2-dot" style="--c:#776012"></span>Oro viejo</li>
-        </ul>
-      </div>
-
-      <!-- EVITAR -->
-      <div class="dc2-group" data-dc2-cycle data-dc2-delay="1800">
-        <p class="dc2-group-label">Evitar</p>
-        <div class="dc2-cycle" aria-hidden="true">
-          <div class="dc2-orb-wrap">
-            <div class="dc2-orb">
-              <span class="dc2-layer dc2-layer--light is-on" style="--c:#FFFFFF"></span>
-              <span class="dc2-layer dc2-layer--light" style="--c:#ecdcc1"></span>
-              <span class="dc2-gloss"></span>
-              <span class="dc2-sweep"></span>
-            </div>
-          </div>
-          <div class="dc2-names">
-            <span class="dc2-name is-on">Blanco</span>
-            <span class="dc2-name">Champán</span>
-          </div>
-        </div>
-        <ul class="dc2-list">
-          <li><span class="dc2-dot dc2-dot--light" style="--c:#FFFFFF"></span>Blanco</li>
-          <li><span class="dc2-dot dc2-dot--light" style="--c:#ecdcc1"></span>Champán</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Aviso obligatorio: solo adultos -->
-    <div class="dc2-adults">
-      <svg class="dc2-adults-ico" viewBox="0 0 32 30" aria-hidden="true">
-        <path d="M16 7 C19 1 30 1 30 10 C30 19 16 28 16 28 C16 28 2 19 2 10 C2 1 13 1 16 7 Z"/>
-      </svg>
-      <p class="dc2-adults-title">Evento solo para adultos</p>
-      <p class="dc2-adults-text">Con todo cariño, hemos decidido que esta celebración sea solo para adultos. Gracias por su comprensión.</p>
-    </div>
-
+  <span class="lbl on-ink">Cómo vestir</span>
+  <h2 class="ttl foil-text d2" id="dc3-title">Código de vestimenta</h2>
+  <div class="gline"></div>
+  <p class="dc3-type on-ink">Semiformal</p>
+  <div class="dc3-fig">
+    <figure class="dc3-f"><img src="caballero.png" alt="Ilustración de caballero" width="150" height="305"><figcaption>Caballeros</figcaption></figure>
+    <figure class="dc3-f dc3-f2"><img src="dama.png" alt="Ilustración de dama" width="125" height="305"><figcaption>Damas</figcaption></figure>
   </div>
+  <h3 class="dc3-sub on-ink">Colores sugeridos</h3>
+  <div class="dc3-grid dc3-g3"><div class="dc3-c levitate" style="animation-delay:-0.0s"><span class="ball"><span class="disc" style="background:#87b5c4"><i style="animation-delay:-0.0s"></i></span></span><b>Azul cielo</b></div><div class="dc3-c levitate" style="animation-delay:-1.7s"><span class="ball"><span class="disc" style="background:#97abbe"><i style="animation-delay:-1.3s"></i></span></span><b>Azul grisáceo</b></div><div class="dc3-c levitate" style="animation-delay:-3.4s"><span class="ball"><span class="disc" style="background:#776012"><i style="animation-delay:-2.6s"></i></span></span><b>Oro viejo</b></div></div>
+  <h3 class="dc3-sub on-ink">Colores a evitar</h3>
+  <div class="dc3-grid dc3-g2"><div class="dc3-c levitate" style="animation-delay:-5.1s"><span class="ball"><span class="disc" style="background:#FFFFFF"><i style="animation-delay:-3.9s"></i></span></span><b>Blanco</b></div><div class="dc3-c levitate" style="animation-delay:-0.3s"><span class="ball"><span class="disc" style="background:#ecdcc1"><i style="animation-delay:-0.2s"></i></span></span><b>Champán</b></div></div>
+  <p class="dc3-note on-ink">Te pedimos evitar estos tonos. ¡Gracias por tu comprensión!</p>
+  <div class="dc3-adults levitate lev-c"><span class="dc3-ad-t">Evento solo para adultos</span><p>Con todo cariño, hemos decidido que esta celebración sea solo para adultos. Gracias por su comprensión.</p></div>
 </section>
 
 <section id="gifts" class="env-gifts" aria-labelledby="env-gifts-title">
@@ -1339,6 +1356,7 @@ function initInvitation(){
   scrollAnims();
   countdown(); setInterval(countdown, 1000);
   initMenu();
+  initAutoScroll();
   initLocCards();
   initAlbum();
   if (window.initDressCode2) initDressCode2();
@@ -1506,6 +1524,36 @@ mBtn.addEventListener('click', () => {
 });
 aud.addEventListener('play', () => mBtn.classList.add('is-playing'));
 aud.addEventListener('pause', () => mBtn.classList.remove('is-playing'));
+
+
+/* ── 14. RECORRIDO AUTOMÁTICO (sin botón) ─────────────── */
+function initAutoScroll(){
+  if (RM || document.hidden || location.hash || /noauto/.test(location.search)) return;
+  let stopped = false, raf = 0, pos = 0, expected = -1, last = 0, t0 = 0;
+  const MAXV = 38;
+  function stop(){ if (stopped) return; stopped = true; cancelAnimationFrame(raf); }
+  ['wheel','touchstart','pointerdown','keydown'].forEach(ev => window.addEventListener(ev, stop, { passive:true, capture:true }));
+  window.addEventListener('scroll', () => { if (!stopped && expected >= 0 && Math.abs(window.scrollY - expected) > 3) stop(); }, { passive:true });
+  document.getElementById('fabMenu').addEventListener('click', stop);
+  function frame(now){
+    if (stopped) return;
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    const ramp = Math.min(1, (now - t0) / 1000), ease = ramp * ramp * (3 - 2 * ramp);
+    let v = MAXV * ease;
+    const y = window.scrollY;
+    if (y < innerHeight * .9) v *= .75;
+    const g = document.getElementById('gallery').getBoundingClientRect();
+    if (g.top < innerHeight && g.bottom > 0) v *= .7;
+    pos += v * dt;
+    window.scrollTo(0, pos); expected = window.scrollY;
+    if (pos >= document.documentElement.scrollHeight - innerHeight - 2) return stop();
+    raf = requestAnimationFrame(frame);
+  }
+  setTimeout(() => {
+    if (stopped || document.hidden) return;
+    pos = window.scrollY; t0 = last = performance.now(); raf = requestAnimationFrame(frame);
+  }, 2600);
+}
 
 /* ── 12. MENÚ ─────────────────────────────────────────── */
 function initMenu(){
