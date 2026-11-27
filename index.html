@@ -872,6 +872,57 @@ img{max-width:100%}
   .loc-card,.menu-list li,#menu{transition:opacity .3s ease!important}
 }
   </style>
+<style id="premium">
+.vinyl-icons .vinyl-icon-pause{display:none}.vinyl-btn.is-playing .vinyl-icons .vinyl-icon-pause{display:block}
+.br-estela,.br-estela .w,.br-vert,.br-vert .w{text-shadow:none!important}
+/* menú abajo al centro, vinilo abajo a la derecha */
+.fab-menu{top:auto;right:auto;left:50%;bottom:max(18px,env(safe-area-inset-bottom));width:104px;margin-left:-52px;border-radius:40px;gap:8px;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px}
+.vinyl-btn{left:auto;right:14px}
+.h-scroll{bottom:78px}.hero-cnt{padding-bottom:150px}
+#footer{padding-bottom:130px}
+
+/* la acuarela florece */
+.ink-bg.will-bloom i{-webkit-mask-image:radial-gradient(circle,#000 48%,transparent 70%);mask-image:radial-gradient(circle,#000 48%,transparent 70%);-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:0% 0%;mask-size:0% 0%;opacity:0;transition:-webkit-mask-size 2.2s cubic-bezier(.2,.6,.2,1),mask-size 2.2s cubic-bezier(.2,.6,.2,1),opacity 1s ease}
+.ink-bg.will-bloom.bloom i{-webkit-mask-size:330% 330%;mask-size:330% 330%;opacity:1}
+
+/* brillos repartidos (nunca dos iguales seguidos) */
+.br-solid,.br-solid .w{color:var(--accent-deep)}
+.br-resp .w,.br-enc .w{color:var(--gold-deep);display:inline-block}
+.br-resp .w{animation:brResp 5s ease-in-out infinite}
+@keyframes brResp{50%{text-shadow:0 0 18px rgba(201,171,114,.85)}}
+.br-enc .w{opacity:1}
+.br-enc.on .w{animation:brEnc 1.8s ease both}
+@keyframes brEnc{0%{color:#c7b79a;text-shadow:none}45%{color:#a8874f;text-shadow:0 0 26px rgba(201,171,114,1)}100%{color:var(--gold-deep);text-shadow:0 0 8px rgba(201,171,114,.35)}}
+.br-estela,.br-estela .w{background:linear-gradient(105deg,#8a6d3b 42%,#c9ab72 50%,#8a6d3b 58%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brEstela 6s ease-in-out infinite}
+@keyframes brEstela{0%,35%{background-position:100% 0}75%,100%{background-position:0 0}}
+.br-vert,.br-vert .w{background:linear-gradient(180deg,#6e532a 30%,#b8975a 50%,#6e532a 70%);background-size:100% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brVert 5.5s ease-in-out infinite alternate}
+@keyframes brVert{from{background-position:0 0}to{background-position:0 100%}}
+.br-estela:has(.w),.br-vert:has(.w){background:none;animation:none;-webkit-text-fill-color:initial}
+.casc{display:inline-block}
+.casc b{display:inline-block;font-weight:400;color:#e6d3a8;animation:casc 5s ease-in-out infinite}
+@keyframes casc{0%,70%,100%{color:#e6d3a8;text-shadow:none}15%{color:#FFFBEA;text-shadow:0 0 18px rgba(247,231,206,.9)}}
+
+/* filo de luz en ubicaciones */
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+.loc-card{position:relative}
+.loc-card::before{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;pointer-events:none;background:conic-gradient(from var(--ang),transparent 0 72%,#c9ab72 84%,#fff7e3 88%,#5f94b4 94%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:beam 6s linear infinite}
+@keyframes beam{to{--ang:360deg}}
+
+/* itinerario: estela y chispas */
+.it-comet{position:absolute;left:50%;top:0;width:12px;height:70px;margin-left:-6px;border-radius:8px;pointer-events:none;background:linear-gradient(to bottom,transparent,rgba(95,148,180,.45),#F7E7CE);box-shadow:0 14px 20px -4px rgba(201,171,114,.55)}
+.it-dot::after{content:'';position:absolute;inset:-14px;border-radius:50%;background:radial-gradient(circle,rgba(247,231,206,.95),rgba(201,171,114,.5) 35%,transparent 68%);opacity:0}
+.it-step.lit .it-dot::after{animation:spark 2.8s ease-out infinite}
+@keyframes spark{0%{transform:scale(.3);opacity:1}70%,100%{transform:scale(1.5);opacity:0}}
+.it-time{font-family:'Bodoni Moda',serif}
+
+/* galería en diagonal que se endereza */
+.hp{position:relative;height:330px;margin:0 -22px 18px;overflow:hidden;perspective:900px;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
+.hp-rig{position:absolute;left:50%;top:8px;width:640px;margin-left:-320px;display:flex;flex-direction:column;gap:10px;transform-style:preserve-3d}
+.hp-row{display:flex;justify-content:center;gap:10px}
+.hp-row img{flex:none;width:150px;height:100px;object-fit:cover;object-position:center 30%;border-radius:12px;box-shadow:0 14px 24px -12px rgba(24,48,63,.55)}
+
+@media (prefers-reduced-motion:reduce){.br-resp .w,.br-enc.on .w,.br-estela,.br-vert,.br-estela .w,.br-vert .w,.casc b,.loc-card::before,.it-step.lit .it-dot::after{animation:none!important}.it-comet{display:none}}
+</style>
 </head>
 <body>
 
@@ -900,6 +951,7 @@ img{max-width:100%}
 <!-- BOTONES FLOTANTES -->
 <button class="fab fab-menu" id="fabMenu" type="button" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  <span>Menú</span>
 </button>
 <button class="vinyl-btn" id="fabMusic" type="button" aria-label="Pausar o reproducir música">
   <div class="vinyl-tonearm"><div class="vinyl-tonearm-pivot"></div><div class="vinyl-tonearm-line"></div><div class="vinyl-tonearm-head"></div></div>
@@ -1169,6 +1221,8 @@ img{max-width:100%}
 <section id="gallery" class="g3d-section" aria-label="Galería de fotos">
   <p class="g3d-eyebrow">Nuestros momentos</p>
   <h2 class="g3d-title foil-text">Nuestra historia</h2>
+  <div class="hp" aria-hidden="true"><div class="hp-rig"><div class="hp-row"><img src="fotos-cliente/foto-1.jpg" alt=""><img src="fotos-cliente/foto-2.jpg" alt=""><img src="fotos-cliente/foto-4.jpg" alt=""><img src="fotos-cliente/foto-5.jpg" alt=""></div><div class="hp-row"><img src="fotos-cliente/foto-7.jpg" alt=""><img src="fotos-cliente/foto-6.jpg" alt=""><img src="fotos-cliente/foto-1.jpg" alt=""><img src="fotos-cliente/foto-2.jpg" alt=""></div><div class="hp-row"><img src="fotos-cliente/foto-4.jpg" alt=""><img src="fotos-cliente/foto-5.jpg" alt=""><img src="fotos-cliente/foto-7.jpg" alt=""><img src="fotos-cliente/foto-6.jpg" alt=""></div></div></div>
+  
   <span class="g3d-orn" aria-hidden="true"></span>
 
   <div class="g3d-scene" id="g3d-scene">
@@ -1356,6 +1410,7 @@ function initInvitation(){
   scrollAnims();
   countdown(); setInterval(countdown, 1000);
   initMenu();
+  initPremium();
   initAutoScroll();
   initLocCards();
   initAlbum();
@@ -1553,6 +1608,42 @@ function initAutoScroll(){
     if (stopped || document.hidden) return;
     pos = window.scrollY; t0 = last = performance.now(); raf = requestAnimationFrame(frame);
   }, 2600);
+}
+
+
+/* ══ CAPA PREMIUM ══ */
+function initPremium(){
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const strip = el => [el, ...el.querySelectorAll('.w')].forEach(n => n.classList.remove('foil-text','foil-dark'));
+  // nombres de portada: cascada
+  $$('.hero-names > span:not(.amp)').forEach(el => {
+    strip(el); el.classList.add('casc');
+    el.innerHTML = Array.from(el.textContent).map((c,i) => `<b style="animation-delay:${i*.14}s">${c}</b>`).join('');
+  });
+  const map = [['#fecha .fch-headline','br-estela'],['#fecha .fch-amp','br-solid'],['#location .ttl','br-enc'],['#location .loc-title','br-solid'],
+    ['#calendar .ttl','br-resp'],['#itinerary .ttl','br-estela'],['#dresscode .ttl','br-solid'],['#gifts h2','br-resp'],['#album .ttl','br-solid'],
+    ['#gallery h2','br-estela'],['#family .ttl','br-vert'],['#rsvp h2','br-enc'],['#footer .ft-nofaltes','br-resp'],['#footer .ft-names','br-estela']];
+  map.forEach(([s,c]) => $$(s).forEach(el => {
+    strip(el);
+    if (!el.querySelector('.w') && (c === 'br-resp' || c === 'br-enc')) el.innerHTML = '<span class="w">' + el.innerHTML + '</span>';
+    el.classList.add(c);
+  }));
+  const once = (els, fn, th) => { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ fn(e.target); io.unobserve(e.target); } }), { threshold: th }); els.forEach(el => io.observe(el)); };
+  once($$('.br-enc'), el => el.classList.add('on'), .8);
+  once($$('#itinerary .it-step'), el => el.classList.add('lit'), .6);
+  if (RM) return;
+  // la acuarela florece al entrar cada sección
+  const inks = $$('.ink-bg'); inks.forEach(i => i.classList.add('will-bloom'));
+  once(inks.map(i => i.parentElement), sec => sec.querySelectorAll(':scope > .ink-bg').forEach(i => i.classList.add('bloom')), .08);
+  inks.forEach(i => gsap.fromTo(i, { y:20 }, { y:-20, ease:'none', scrollTrigger:{ trigger:i.parentElement, start:'top bottom', end:'bottom top', scrub:true } }));
+  // cometa sobre la línea del itinerario
+  const tl = document.querySelector('#itinerary .it-timeline');
+  if (tl){ const c = document.createElement('i'); c.className = 'it-comet'; tl.insertBefore(c, tl.children[1]);
+    gsap.fromTo(c, { y:-40 }, { y:() => tl.offsetHeight - 70, ease:'none', scrollTrigger:{ trigger:tl, start:'top 80%', end:'bottom 60%', scrub:true, invalidateOnRefresh:true } }); }
+  // Hero Parallax
+  const st = { trigger:'.hp', start:'top bottom', end:'center 40%', scrub:true };
+  gsap.fromTo('.hp-rig', { rotationX:42, rotationZ:12, y:-50, opacity:.35 }, { rotationX:0, rotationZ:0, y:0, opacity:1, ease:'none', scrollTrigger:st });
+  $$('.hp-row').forEach((r,i) => gsap.fromTo(r, { x:i % 2 ? 110 : -110 }, { x:i % 2 ? -40 : 40, ease:'none', scrollTrigger:{ trigger:'.hp', start:'top bottom', end:'bottom top', scrub:true } }));
 }
 
 /* ── 12. MENÚ ─────────────────────────────────────────── */
