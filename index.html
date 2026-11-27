@@ -8,13 +8,13 @@
   <meta name="description" content="¡Estás invitado a nuestra boda! Tijuana, Baja California · 27 de marzo de 2027">
   <meta property="og:title" content="Marian &amp; Raúl · 27 · Marzo · 2027">
   <meta property="og:description" content="¡Estás invitado a nuestra boda! Tijuana, Baja California · 27 de marzo de 2027">
-  <meta property="og:image" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app/og-image.jpg">
+  <meta property="og:image" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app/og-image.jpg?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app/og-image.jpg">
+  <meta name="twitter:image" content="https://boda-marian-nevarez-y-raul-cruz.vercel.app/og-image.jpg?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
@@ -873,6 +873,7 @@ img{max-width:100%}
 }
   </style>
 <style id="premium">
+.sobre-circle{background:rgba(44,80,104,.9)}.sobre-lbl{color:#18303f;text-shadow:0 0 8px #fff,0 0 16px #fff}.sobre-ring::before,.sobre-ring::after{border-color:rgba(44,80,104,.5)}
 .vinyl-icons .vinyl-icon-pause{display:none}.vinyl-btn.is-playing .vinyl-icons .vinyl-icon-pause{display:block}
 .br-estela,.br-estela .w,.br-vert,.br-vert .w{text-shadow:none!important}
 /* menú abajo al centro, vinilo abajo a la derecha */
@@ -942,7 +943,7 @@ img{max-width:100%}
 
 <!-- LOADER (SOBRE) -->
 <div id="loader">
-  <img class="sobre-img" src="sobre.jpg" alt="Sobre de la invitación de Marian y Raúl">
+  <img class="sobre-img" src="sobre.jpg?v=2" alt="Sobre de la invitación de Marian y Raúl">
   <button class="sobre-btn" id="sobreBtn" aria-label="Abrir invitación">
     <div class="sobre-ring">
       <div class="sobre-circle">
@@ -952,7 +953,7 @@ img{max-width:100%}
     <span class="sobre-lbl">Toca para abrir</span>
   </button>
   <video class="sobre-video" id="sobreVideo" muted playsinline preload="auto">
-    <source src="sobre-video.mp4" type="video/mp4">
+    <source src="sobre-video.mp4?v=2" type="video/mp4">
   </video>
 </div>
 
@@ -1394,7 +1395,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let started = false;
 
   sobreBtn.addEventListener('click', () => {
-    sobreBtn.style.opacity = '0'; sobreBtn.style.pointerEvents = 'none';
+    sobreBtn.style.animation = 'none'; sobreBtn.style.transition = 'opacity .4s'; sobreBtn.style.opacity = '0'; sobreBtn.style.pointerEvents = 'none';
     sobreVid.play();
     function crossfade(){ sobreVid.style.opacity = '1'; gsap.to('.sobre-img',{opacity:0,duration:.5,ease:'power2.out'}); }
     if (sobreVid.readyState >= 2) crossfade(); else sobreVid.addEventListener('playing', crossfade, {once:true});
