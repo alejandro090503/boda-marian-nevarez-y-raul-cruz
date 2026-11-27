@@ -902,11 +902,6 @@ img{max-width:100%}
 .casc b{display:inline-block;font-weight:400;color:#e6d3a8;animation:casc 5s ease-in-out infinite}
 @keyframes casc{0%,70%,100%{color:#e6d3a8;text-shadow:none}15%{color:#FFFBEA;text-shadow:0 0 18px rgba(247,231,206,.9)}}
 
-/* filo de luz en ubicaciones */
-@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
-.loc-card{position:relative}
-.loc-card::before{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;pointer-events:none;background:conic-gradient(from var(--ang),transparent 0 72%,#c9ab72 84%,#fff7e3 88%,#5f94b4 94%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:beam 6s linear infinite}
-@keyframes beam{to{--ang:360deg}}
 
 /* itinerario: estela y chispas */
 .it-comet{position:absolute;left:50%;top:0;width:12px;height:70px;margin-left:-6px;border-radius:8px;pointer-events:none;background:linear-gradient(to bottom,transparent,rgba(95,148,180,.45),#F7E7CE);box-shadow:0 14px 20px -4px rgba(201,171,114,.55)}
@@ -915,13 +910,32 @@ img{max-width:100%}
 @keyframes spark{0%{transform:scale(.3);opacity:1}70%,100%{transform:scale(1.5);opacity:0}}
 .it-time{font-family:'Bodoni Moda',serif}
 
-/* galería en diagonal que se endereza */
-.hp{position:relative;height:330px;margin:0 -22px 18px;overflow:hidden;perspective:900px;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
-.hp-rig{position:absolute;left:50%;top:8px;width:640px;margin-left:-320px;display:flex;flex-direction:column;gap:10px;transform-style:preserve-3d}
-.hp-row{display:flex;justify-content:center;gap:10px}
-.hp-row img{flex:none;width:150px;height:100px;object-fit:cover;object-position:center 30%;border-radius:12px;box-shadow:0 14px 24px -12px rgba(24,48,63,.55)}
 
-@media (prefers-reduced-motion:reduce){.br-resp .w,.br-enc.on .w,.br-estela,.br-vert,.br-estela .w,.br-vert .w,.casc b,.loc-card::before,.it-step.lit .it-dot::after{animation:none!important}.it-comet{display:none}}
+@media (prefers-reduced-motion:reduce){.br-resp .w,.br-enc.on .w,.br-estela,.br-vert,.br-estela .w,.br-vert .w,.casc b,
+.it-step.lit .it-dot::after{animation:none!important}.it-comet{display:none}}
+
+/* galería en diagonal premium */
+.diag{height:260vh;position:relative;background:#18303f}
+.diag .st{position:sticky;top:0;height:100svh;overflow:hidden;perspective:1100px}
+.diag .rig{position:absolute;left:50%;top:50%;width:1100px;margin-left:-550px;transform-style:preserve-3d;display:grid;gap:12px;transform:translate3d(0,-50%,0)}
+.diag .rw{display:flex;justify-content:center;gap:12px}
+.diag .c{flex:none;width:190px;aspect-ratio:3/4;position:relative;border-radius:3px;overflow:hidden;background:#24445a;box-shadow:0 26px 40px -22px rgba(0,0,0,.85)}
+.diag .rw.w .c{aspect-ratio:4/3;width:240px}
+.diag .c img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.08)}
+.diag .c::before{content:"";position:absolute;inset:7px;border:1px solid rgba(247,231,206,.55);z-index:2;pointer-events:none}
+.diag .c::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(115deg,transparent 35%,rgba(255,244,220,.28) 48%,transparent 60%) 0 0/300% 100% no-repeat;background-position:var(--sw,140%) 0;mix-blend-mode:screen}
+.diag .dim{position:absolute;inset:0;z-index:3;background:#18303f;opacity:0;pointer-events:none}
+.diag .fog{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(85% 65% at 50% 50%,transparent 40%,rgba(16,30,40,.88) 100%)}
+.diag .grain{position:absolute;inset:-50%;z-index:5;pointer-events:none;opacity:.08}
+.diag.on .grain{animation:gr .9s steps(4) infinite}
+@keyframes gr{25%{transform:translate(-4%,3%)}50%{transform:translate(3%,-2%)}75%{transform:translate(-2%,-4%)}}
+.diag .dt{position:absolute;left:0;right:0;top:9%;z-index:6;text-align:center}
+.diag .dt span{display:block;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#F7E7CE}
+.diag .dt b{display:block;font-size:42px;font-weight:600;color:#e6d3a8;line-height:1.2;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.diag::before,.diag::after{content:"";position:absolute;left:0;right:0;height:130px;z-index:7;pointer-events:none}
+.diag::before{top:0;background:linear-gradient(var(--bg),rgba(251,248,243,0))}
+.diag::after{bottom:0;background:linear-gradient(rgba(251,248,243,0),var(--bg))}
+@media (prefers-reduced-motion:reduce){.diag{height:100svh}.diag .grain{animation:none!important}}
 </style>
 </head>
 <body>
@@ -1218,10 +1232,10 @@ img{max-width:100%}
 <!-- ═══════════ GALERÍA · CARRUSEL 3D (Marian & Raúl) ═══════════
      Requiere: gallery.css, gallery.js, GSAP 3.12.5 (core). Llamar initGallery3D() tras cargar GSAP.
      Fotos: placeholders de fotos-cliente/ (carga normal, sin atributo loading, a propósito). -->
+<div class="diag" id="diag" aria-hidden="true"><div class="st"><div class="rig"></div><div class="fog"></div><div class="grain"></div><div class="dt"><span>Galería</span><b>Momentos</b></div></div></div>
 <section id="gallery" class="g3d-section" aria-label="Galería de fotos">
   <p class="g3d-eyebrow">Nuestros momentos</p>
   <h2 class="g3d-title foil-text">Nuestra historia</h2>
-  <div class="hp" aria-hidden="true"><div class="hp-rig"><div class="hp-row"><img src="fotos-cliente/foto-1.jpg" alt=""><img src="fotos-cliente/foto-2.jpg" alt=""><img src="fotos-cliente/foto-4.jpg" alt=""><img src="fotos-cliente/foto-5.jpg" alt=""></div><div class="hp-row"><img src="fotos-cliente/foto-7.jpg" alt=""><img src="fotos-cliente/foto-6.jpg" alt=""><img src="fotos-cliente/foto-1.jpg" alt=""><img src="fotos-cliente/foto-2.jpg" alt=""></div><div class="hp-row"><img src="fotos-cliente/foto-4.jpg" alt=""><img src="fotos-cliente/foto-5.jpg" alt=""><img src="fotos-cliente/foto-7.jpg" alt=""><img src="fotos-cliente/foto-6.jpg" alt=""></div></div></div>
   
   <span class="g3d-orn" aria-hidden="true"></span>
 
@@ -1411,6 +1425,7 @@ function initInvitation(){
   countdown(); setInterval(countdown, 1000);
   initMenu();
   initPremium();
+  initDiag();
   initAutoScroll();
   initLocCards();
   initAlbum();
@@ -1640,10 +1655,35 @@ function initPremium(){
   const tl = document.querySelector('#itinerary .it-timeline');
   if (tl){ const c = document.createElement('i'); c.className = 'it-comet'; tl.insertBefore(c, tl.children[1]);
     gsap.fromTo(c, { y:-40 }, { y:() => tl.offsetHeight - 70, ease:'none', scrollTrigger:{ trigger:tl, start:'top 80%', end:'bottom 60%', scrub:true, invalidateOnRefresh:true } }); }
-  // Hero Parallax
-  const st = { trigger:'.hp', start:'top bottom', end:'center 40%', scrub:true };
-  gsap.fromTo('.hp-rig', { rotationX:42, rotationZ:12, y:-50, opacity:.35 }, { rotationX:0, rotationZ:0, y:0, opacity:1, ease:'none', scrollTrigger:st });
-  $$('.hp-row').forEach((r,i) => gsap.fromTo(r, { x:i % 2 ? 110 : -110 }, { x:i % 2 ? -40 : 40, ease:'none', scrollTrigger:{ trigger:'.hp', start:'top bottom', end:'bottom top', scrub:true } }));
+}
+
+function initDiag(){
+  const d = document.getElementById('diag'); if (!d) return;
+  const rig = d.querySelector('.rig'), dt = d.querySelector('.dt'), IM = [1,2,4,5,6,7], rows = [], cards = [];
+  ['', 'w', ''].forEach((cls, r) => {
+    const rw = document.createElement('div'); rw.className = 'rw ' + cls;
+    for (let k = 0; k < 5; k++){ const c = document.createElement('div'); c.className = 'c';
+      c.innerHTML = `<img src="fotos-cliente/foto-${IM[(r*2+k)%6]}.jpg" alt=""><i class="dim"></i>`; rw.appendChild(c); cards.push({ c, r, k, dm:c.lastChild }); }
+    rig.appendChild(rw); rows.push(rw);
+  });
+  const cv = document.createElement('canvas'); cv.width = cv.height = 140;
+  const g = cv.getContext('2d'), im = g.createImageData(140,140), px = im.data;
+  for (let i = 0; i < px.length; i += 4){ px[i] = px[i+1] = px[i+2] = Math.random()*255; px[i+3] = 60; }
+  g.putImageData(im,0,0); d.querySelector('.grain').style.backgroundImage = `url(${cv.toDataURL()})`;
+  const cl = v => Math.max(0, Math.min(1, v));
+  let p = 0, on = false, raf = 0;
+  function frame(t){
+    const r = d.getBoundingClientRect();
+    const target = RM ? 1 : cl(-r.top / Math.max(1, r.height - innerHeight));
+    p += (target - p) * (RM ? 1 : .09);
+    const x = cl(p / .78), q = x*x*(3-2*x);
+    rig.style.transform = `translate3d(0,calc(-50% + ${-40+q*60}px),0) rotateX(${16*(1-q)}deg) rotateZ(${-14*(1-q)}deg) scale(${.8+.2*q})`;
+    rows.forEach((rw,i) => rw.style.transform = `translate3d(${(i%2?1:-1)*(1-p)*220}px,0,0)`);
+    cards.forEach(o => { o.dm.style.opacity = ((o.r===1?0:.45) + Math.abs(o.k-2)/2*.3) * (1-q*.75); if (!RM) o.c.style.setProperty('--sw', (140-((t/40+o.k*90+o.r*60)%520))+'%'); });
+    dt.style.opacity = 1 - cl((p-.55)/.25);
+    if (on && !RM) raf = requestAnimationFrame(frame);
+  }
+  new IntersectionObserver(es => { on = es[0].isIntersecting; d.classList.toggle('on', on); cancelAnimationFrame(raf); if (on) raf = requestAnimationFrame(frame); }).observe(d);
 }
 
 /* ── 12. MENÚ ─────────────────────────────────────────── */
